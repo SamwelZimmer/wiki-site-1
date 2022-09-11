@@ -9,6 +9,26 @@ import CurrencyDropdrown from "./PlansPageComponents/CurrencyDropdown";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 
+const pointers1 = [
+    "The default one",
+    "Uhh.. shit's free",
+    "Enjoy 5 free uploads"
+];
+
+const pointers2 = [
+    "Mid Pointer 1",
+    "Mid Pointer 2",
+    "Mid Pointer 3"
+];
+
+const pointers3 = [
+    "High Pointer 1",
+    "High Pointer 2",
+    "High Pointer 3"
+];
+
+
+
 function PlansPage() {
 
     const [data, setData] = useState('');
@@ -38,18 +58,21 @@ function PlansPage() {
     };
 
     return (
-        <body className="products-page-bg">
+        <body className="subtle-shifting-bg">
             {user ? <Navbar2  icon={'avatar'}/> : <Navbar2  icon={'login'}/>}
             <motion.div 
               id="plans-cards-container"
               variants={container}
               initial="hidden"
               animate="visible"
-            >
-                <PlansCard dealNo={1} darkCard={true} time={time} />
-                <PlansCard dealNo={2} time={time}  />
-                <PlansCard dealNo={3} time={time} />
+            >   
+                
+                <PlansCard dealNo={1} darkCard={true} time={time} hasButton={false} pointers={pointers1}/>
+                <PlansCard dealNo={2} time={time} hasButton={true}  pointers={pointers2}/>
+                <div className="small-screen-plan-spacing" />
+                <PlansCard dealNo={3} time={time} hasButton={true} pointers={pointers3}/>
             </motion.div>
+
             <div id="plan-page-backdrop">
                 <div id="plan-page-bottom-row">
                     <div className="centered-row">

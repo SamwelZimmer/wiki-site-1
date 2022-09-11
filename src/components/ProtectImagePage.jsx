@@ -89,8 +89,8 @@ function ProtectImagePage() {
                         
                         />
                         <CheckIcon />
-                    </form>
-                    <form className="proImg-long-form">
+                    {/* </form>
+                    <form className="proImg-long-form"> */}
                         <input 
                             required 
                             type={"text"} 

@@ -47,7 +47,7 @@ export function ProductsPageContent() {
                         <h1>It's time to <br></br>pick your poison ...</h1>
                     </div>
                 </div>
-            
+                
                 <ProductsPageProduct boxColor={"offwhite"} title={productTitles[0]} content={productDescription[0]} btnText={"Feature Coming Soon"}  btnLink={''}/>
                 <ProductsPageProduct boxColor={"green"} title={productTitles[1]} content={productDescription[1]} btnText={"Let's Get Going"} btnLink={user ? "/protect-image" : "/loginprompt"}/>
                 <ProductsPageProduct boxColor={"brown"} title={productTitles[2]} content={productDescription[2]} btnText={"Feature Coming Soon"} btnLink={''} />

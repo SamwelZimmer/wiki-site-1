@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle, registerWithEmailAndPassword } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -22,7 +22,6 @@ function LoginPage() {
     const [signUpEmail, setSignUpEmail] = useState("");
     const [signUpPassword, setSignUpPassword] = useState("");
     const navigate = useNavigate();
-    // const history = useHistory();
 
     useEffect(() => {
         if (loading) {
@@ -97,6 +96,11 @@ function LoginPage() {
                         </motion.button>
                     </div>
                 </div>
+                <motion.div id="forgot-pass-container" className="pointer" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                    <Link to={"/reset-password"}>
+                        <p>yeah... i kinda forgot my password</p>
+                    </Link>
+                </motion.div>
             </div>
 
             {/* sign up section  */}

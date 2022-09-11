@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { GoogleAuthProvider, getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut } from 'firebase/auth';
 import { getFirestore, query, getDocs, setDoc, collection, where, addDoc, doc } from 'firebase/firestore';
-import { useCollection, useCollectionData, useDocument } from "react-firebase-hooks/firestore"
+// import { useCollection, useCollectionData, useDocument } from "react-firebase-hooks/firestore"
 
 
 const firebaseConfig = {
@@ -78,7 +78,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
 const sendPasswordReset = async (email) => {
     try {
         sendPasswordResetEmail(auth, email);
-        alert("Your email just got graced with a link to reset your password! Try to remember it this time.")
+        alert("Your email just got graced with a link to reset your password! \nTry to remember it this time.")
     } catch (err) {
         console.log(err);
         alert(err.message);
@@ -96,7 +96,6 @@ const logout = () => {
 // this creates a firebase subcollection called "uploads" which stores
 const createProtectImage = async (user, uploadedFiles) => {
     const postRef = collection(db, "users", `${user.uid}`, "uploads");
-    console.log(postRef)
     const q = query(postRef, where("uid", "==", user.uid));
     const docs = await getDocs(q);
     if (docs.docs.length === 0) {
@@ -106,6 +105,24 @@ const createProtectImage = async (user, uploadedFiles) => {
         });
     }
 }
+
+// const shitSuccesful = async (user, data) => {
+//     try {
+//         const postRef = collection(db, "users", `${user.uid}`, "uploads");
+//         const q = query(postRef, where("uid", "==", user.uid));
+//         const docs = await getDocs(q);
+//         if (docs.docs.length === 0) {
+//             await addDoc(postRef, {
+//                 user: user.uid,
+//                 data: data
+//             });
+//         }
+//         // querying  querying the database to check if this user is registered in our database with the user uid. if no we make new user
+//     } catch (err) {
+//         // if google authentication fails 
+//         console.log(err);
+//     }
+// }
 
 
 
@@ -118,4 +135,5 @@ export {
     sendPasswordReset,
     logout,
     createProtectImage,
+    // shitSuccesful,
   };

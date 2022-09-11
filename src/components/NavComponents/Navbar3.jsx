@@ -1,14 +1,16 @@
 import React from "react";
-import LogoButton from "./NavComponents/LogoButton";
-import AvatarButton from "./NavComponents/AvatarButton";
-import GearButton from "./NavComponents/GearButton";
-import NavExpandToggle from "./NavComponents/NavExpandToggle";
-import NavDropDown from "./NavComponents/NavDropDown";
-import LogoutButton from "./NavComponents/LogoutButton";
-import LoginButton from "./NavComponents/LoginButton";
-import IconPlaceholder from "./NavComponents/Placeholder";
 
-function Navbar2({ icon }) {
+import LogoButton from "./LogoButton";
+import AvatarButton from "./AvatarButton";
+import GearButton from "./GearButton";
+import NavExpandToggle from "./NavExpandToggle";
+import NavDropDown from "./NavDropDown";
+import LogoutButton from "./LogoutButton";
+import LoginButton from "./LoginButton";
+import IconPlaceholder from "./Placeholder";
+
+
+function Navbar3({ icon }) {
 
     function TopRightIcon() {
         if (icon === 'avatar') {
@@ -31,7 +33,10 @@ function Navbar2({ icon }) {
     let mql = window.matchMedia('(max-width: 35em)');
     
     return(
-            <div className="nav-position bg-transparent flex justify-between">
+            // <div className="nav-position bg-transparent flex justify-between">
+            <div className="absolute top-0 left-0 w-screen flex flex-row justify-between items-center bg-slate-600 px-6 lg:px-12 h-16 lg:h-24">
+
+
                 <LogoButton />
                 {mql.matches ? <NavDropDown /> : <NavExpandToggle />}
                 
@@ -42,4 +47,4 @@ function Navbar2({ icon }) {
     );
 }
 
-export default Navbar2;
+export default Navbar3;

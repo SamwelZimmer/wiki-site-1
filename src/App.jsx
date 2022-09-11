@@ -12,6 +12,19 @@ import SettingsPage from './components/SettingsPage';
 import LoginPrompt from './components/LoginPrompt';
 import PlansPage from './components/PlansPage';
 import PayPage from "./components/PayPage";
+import ResetPassword from "./components/ResetPassword";
+import Success from "./components/Success";
+import Cancel from "./components/Cancel";
+import ContactUs from "./components/ContactUs";
+import ContactFormSuccess from "./components/ContactFormSuccess";
+import About from "./components/AboutPageComponents/About";
+import ExamplesPage from "./components/ExamplesPageComponents/ExamplesPage"
+
+fetch('http://localhost:4242/results')
+  .then(response => {
+    console.log('i got here')
+    return response.json()
+  })
 
 function App() {
   return (
@@ -29,6 +42,14 @@ function App() {
         <Route path='/loginprompt' element={<LoginPrompt />} />
         <Route path='/plans' element={<PlansPage />} />
         <Route path='/pay' element={<PayPage />}/>
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/contact-us-thanks" element={<ContactFormSuccess />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/examples" element={<ExamplesPage />} />
+
       </Routes>
     </Router>
   );

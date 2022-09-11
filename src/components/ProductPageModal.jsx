@@ -30,7 +30,7 @@ const dropIn = {
 
 const ModalText = ({ title, content }) => (
     <div className="products-page-text">
-      <h3 style={{"padding-bottom": "1rem", "padding-top": "1rem", "color": "#C0A483", fontSize: "3rem" }}>{title}</h3>
+      <h3 style={{"padding-bottom": "1rem", "padding-top": "1rem", "color": "#C0A483", fontSize: "3rem", textAlign: "center", paddingRight: "25px" }}>{title}</h3>
       <h5 style={{"color": "#463C2C", fontSize: "1.5rem", "padding-bottom": "1rem", textAlign: "center" }}>
         {content}
       </h5>

@@ -10,7 +10,7 @@ import LoginButton from "./LoginButton";
 import IconPlaceholder from "./Placeholder";
 
 
-function Navbar3({ icon }) {
+function Navbar3({ icon, color }) {
 
     function TopRightIcon() {
         if (icon === 'avatar') {
@@ -34,7 +34,7 @@ function Navbar3({ icon }) {
     
     return(
             // <div className="nav-position bg-transparent flex justify-between">
-            <div className="absolute top-0 left-0 w-screen flex flex-row justify-between items-center bg-slate-600 px-6 lg:px-12 h-16 lg:h-24">
+            <div className={`${color ? "bg-slate-600" : "bg-transparent"} absolute top-0 left-0 w-screen flex flex-row justify-between items-center px-6 lg:px-12 h-16 lg:h-24`}>
 
 
                 <LogoButton />

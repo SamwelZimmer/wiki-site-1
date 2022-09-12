@@ -13,8 +13,6 @@ h2 {
   font-size: 2em;
   font-weight: 400;
 }
-
-
 p {
   color: #8f8f8f;
 }
@@ -26,7 +24,6 @@ body {
   height: 100%;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
-
 }
 
 hr { color: gray; border-style: inset; border-width: 1px; margin: 0 auto; }
@@ -42,12 +39,44 @@ li {
   background-color: #FFFBF6;
 }
 
+.white-text {
+  color: #FFFBF6;
+}
+
 .light-backdrop-box {
   background-color: #E7E0D6;
 }
 
 .dark-backdrop-box {
   background-color: #C0A483;
+}
+
+.beige-text {
+  color: #C0A483;
+}
+
+.green-bg {
+  background-color: #3C4733;
+}
+
+.green-text {
+  color: #3C4733;
+}
+
+.grey-bg {
+  background-color: #B6B2AB;
+}
+
+.grey-text {
+  color: #B6B2AB;
+}
+
+.brown-bg {
+  background-color: #332817;
+}
+
+.brown-text {
+  color: #332817;
 }
 
 .pointer {
@@ -1445,14 +1474,14 @@ li {
     background: #E7E0D6;
   }
   
-  .underline {
+  /* .underline {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 0.25rem;
     background: #332817;
-  }
+  } */
   
   #my-work-content-container {
     position: relative;
@@ -2955,33 +2984,34 @@ li {
   }
 
 
-  .founder-strip {
+  /* .founder-strip {
     height: 10rem;
     width: calc(100% - 50px);
-  }
+  } */
   
-  .sam-container {
-    background: #B6B2AB;
+  /* .sam-container {
+    background: #332817;
     height: 100%;
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-  }
+  } */
   
-  .sam-container[data-isOpen="true"] {
+  /* .sam-container[data-isOpen="true"] {
     width: calc(100% - 160px - 25px);
-    height: 100%;
+    width: 50%;
+    height: max-content;
     padding-right: 1rem;
     border-radius: 1rem;
-    background-color: #B6B2AB;
+    background-color: #332817;
     justify-content: space-between;
 
   }
   
   .greg-container {
-    background: #C0A483;
+    background: #3c4733;
     height: 100%;
     aspect-ratio: 1;
     display: flex;
@@ -2995,7 +3025,7 @@ li {
     height: 100%;
     padding-left: 1rem;
     border-radius: 1rem;
-    background-color: #C0A483;
+    background-color: #3c4733;
     justify-content: space-between;
   }
 
@@ -3019,7 +3049,7 @@ li {
   #greg-content[data-isOpen="true"] {
     color: #332817;
     padding-left: 3rem;
-  }
+  } */
 
 }
 

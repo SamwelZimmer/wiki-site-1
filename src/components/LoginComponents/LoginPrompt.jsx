@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar2 from "./Navbar2";
+import Navbar2 from "../NavComponents/Navbar2";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 

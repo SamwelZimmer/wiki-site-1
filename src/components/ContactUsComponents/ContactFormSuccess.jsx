@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-import Navbar2 from "./Navbar2";
+import Navbar2 from "../NavComponents/Navbar2";
 import { useNavigate } from "react-router-dom";
 
 const ContactFormSuccess = () => {

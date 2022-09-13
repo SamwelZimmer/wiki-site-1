@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, db } from "../firebase";
+import { auth, db } from "../../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import { motion } from "framer-motion";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-import Navbar2 from "./Navbar2";
+import Navbar2 from "../NavComponents/Navbar2";
 
 const COMPANY_EMAIL = "samwel.dev.test@gmail.com"
 const formSubmissionUrl = `https://formsubmit.co/${COMPANY_EMAIL}`

@@ -5,19 +5,19 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import { auth, db } from "../firebase";
+import { auth, db } from "../../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 
-import profileAvatar from "../../src/components/ProfilePageComponents/avatar_img.png";
-import PrivateSwitch from "./ProfilePageComponents/PrivateSwitch";
-import LockIcon from "./ProfilePageComponents/LockIcon";
-import UnlockIcon from "./ProfilePageComponents/UnlockIcon";
-import EditPlanButton from "./ProfilePageComponents/EditPlanButton";
-import MyWorkWindow from "./ProfilePageComponents/MyWorkWindow";
+import profileAvatar from "./avatar_img.png"
+import PrivateSwitch from "./PrivateSwitch";
+import LockIcon from "./LockIcon";
+import UnlockIcon from "./UnlockIcon";
+import EditPlanButton from "./EditPlanButton";
+import MyWorkWindow from "./MyWorkWindow";
 
-import LogoutButton from "./NavComponents/LogoutButton";
+import LogoutButton from "../NavComponents/LogoutButton";
 
-import Navbar2 from "./Navbar2";
+import Navbar2 from "../NavComponents/Navbar2";
 
 function ProfilePage() {
 

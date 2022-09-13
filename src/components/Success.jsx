@@ -6,8 +6,7 @@ import { auth, db } from "../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 
 import { FaSpinner } from "react-icons/fa";
-import Navbar2 from "./Navbar2";
-
+import Navbar2 from "./NavComponents/Navbar2";
 
 const SpinnerIcon = () => {
   return (

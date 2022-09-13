@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 // import axios from "axios";
 
-import Navbar2 from "./Navbar2";
-import CheckIcon from "./ProtectPagesComponets/CheckIcon";
-import CrossIcon from "./ProtectPagesComponets/CrossIcon";
-import UploadIcon from "./ProtectPagesComponets/UploadIcon";
+import Navbar2 from "../NavComponents/Navbar2";
+import CheckIcon from "./CheckIcon";
+import CrossIcon from "./CrossIcon";
+import UploadIcon from "./UploadIcon";
 
-import { createProtectImage, auth } from "../firebase";
+import { createProtectImage, auth } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 
@@ -23,10 +23,6 @@ function ProtectImagePage() {
         const project = {projectTitle, projectDesc, projectJustif};
         createProtectImage(user, project);
     }
-
-
-   
-
 
     return (
         <body className="products-page-bg">

@@ -2,10 +2,9 @@ import React from "react";
 import ProductsPageProduct from "./ProductsPageProduct";
 import { motion } from "framer-motion";
 // import HamburgerMenu from "./HamburgerMenu";
-import Navbar2 from "./Navbar2";
-
+import Navbar2 from "../NavComponents/Navbar2";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 
 const productTitles = ["Sound", "Images", "Documents", "Models"];
 const productDescription = [

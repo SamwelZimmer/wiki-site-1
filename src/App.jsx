@@ -1,22 +1,19 @@
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
-// import Home from './components/Home';
-import Home2 from './components/Home2';
-import JoinPage from './components/JoinPage';
-import PricePage from './components/PricePage';
-import ProductsPage from './components/ProductsPage';
-import ProfilePage from './components/ProfilePage';
-import ProtectImagePage from './components/ProtectImagePage';
-import LoginPage from './components/LoginPage';
-import SettingsPage from './components/SettingsPage';
-import LoginPrompt from './components/LoginPrompt';
-import PlansPage from './components/PlansPage';
+import Home2 from "./components/HomePageComponents/Home2";
+import ProductsPage from './components/ProductPageComponents/ProductsPage';
+import ProfilePage from './components/ProfilePageComponents/ProfilePage';
+import ProtectImagePage from './components/ProtectPagesComponets/ProtectImagePage';
+import LoginPage from './components/LoginComponents/LoginPage';
+import SettingsPage from './components/ProfilePageComponents/SettingsPage';
+import LoginPrompt from './components/LoginComponents/LoginPrompt';
+import PlansPage from './components/PlansPageComponents/PlansPage';
 import PayPage from "./components/PayPage";
-import ResetPassword from "./components/ResetPassword";
+import ResetPassword from "./components/LoginComponents/ResetPassword";
 import Success from "./components/Success";
 import Cancel from "./components/Cancel";
-import ContactUs from "./components/ContactUs";
-import ContactFormSuccess from "./components/ContactFormSuccess";
+import ContactUs from "./components/ContactUsComponents/ContactUs";
+import ContactFormSuccess from "./components/ContactUsComponents/ContactFormSuccess"
 import About from "./components/AboutPageComponents/About";
 import ExamplesPage from "./components/ExamplesPageComponents/ExamplesPage"
 
@@ -30,10 +27,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route exact path='/' element={<Home2/>} /> */}
         <Route exact path='/' element={<Home2/>} />
-        <Route path='/join' element={<JoinPage/>} />
-        <Route path='/pricing' element={<PricePage />} />
         <Route path='/products' element={<ProductsPage />} />
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/protect-image' element={<ProtectImagePage />} />

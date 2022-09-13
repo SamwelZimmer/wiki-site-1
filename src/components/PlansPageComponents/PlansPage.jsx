@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Navbar2 from "./Navbar2";
-import PlansCard from "./PlansPageComponents/PlansCard";
-import TimeSwitch from "./PlansPageComponents/TimeSwitch";
-import CurrencyDropdrown from "./PlansPageComponents/CurrencyDropdown";
+import Navbar2 from "../NavComponents/Navbar2";
+import PlansCard from "./PlansCard";
+import TimeSwitch from "./TimeSwitch";
+import CurrencyDropdrown from "./CurrencyDropdown";
 
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 
 const pointers1 = [
     "The default one",

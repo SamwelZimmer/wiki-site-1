@@ -42,23 +42,5 @@ export default function FounderLinks(name) {
                 <FaInstagram size={iconSize} color={"#B6B2AB"}/>
             </motion.button>
         </div>
-        
-        // <div className="flex flex-col justify-center h-full w-min">
-        //     <motion.button 
-        //         whileHover={{ scale: 1.1 }} 
-        //         onTap={{ scale: 0.9 }} 
-        //         onClick={ () => navigate({twitLink}) }
-        //         // style={{ padding: "1rem"}}
-        //     >
-        //         <FaTwitter size={iconSize} color={color} />
-        //     </motion.button>
-        //     <motion.button 
-        //         whileHover={{ scale: 1.1 }} 
-        //         whileTap={{ scale: 0.9 }}
-        //         onClick={ () => navigate({instaLink}) }
-        //     >
-        //         <FaInstagram size={iconSize} color={color}/>
-        //     </motion.button>
-        // </div>
     );
 }

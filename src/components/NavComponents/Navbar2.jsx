@@ -1,12 +1,12 @@
 import React from "react";
-import LogoButton from "./NavComponents/LogoButton";
-import AvatarButton from "./NavComponents/AvatarButton";
-import GearButton from "./NavComponents/GearButton";
-import NavExpandToggle from "./NavComponents/NavExpandToggle";
-import NavDropDown from "./NavComponents/NavDropDown";
-import LogoutButton from "./NavComponents/LogoutButton";
-import LoginButton from "./NavComponents/LoginButton";
-import IconPlaceholder from "./NavComponents/Placeholder";
+import LogoButton from "./LogoButton";
+import AvatarButton from "./AvatarButton";
+import GearButton from "./GearButton";
+import NavExpandToggle from "./NavExpandToggle";
+import NavDropDown from "./NavDropDown";
+import LogoutButton from "./LogoutButton";
+import LoginButton from "./LoginButton";
+import IconPlaceholder from "./Placeholder";
 
 function Navbar2({ icon }) {
 

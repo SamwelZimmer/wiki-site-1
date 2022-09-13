@@ -3,16 +3,15 @@ import React from "react";
 
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, logInWithEmailAndPassword, signInWithGoogle, registerWithEmailAndPassword } from "../firebase";
+import { auth, logInWithEmailAndPassword, signInWithGoogle, registerWithEmailAndPassword } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 
 // import components
-import googleLogo from "./Logos/googleLogo.png";
-import CheckIcon from "./ProtectPagesComponets/CheckIcon";
-import CrossIcon from "./ProtectPagesComponets/CrossIcon";
-import Navbar2 from "./Navbar2";
-
+import googleLogo from "../Logos/googleLogo.png"
+import CheckIcon from "../ProtectPagesComponets/CheckIcon";
+import CrossIcon from "../ProtectPagesComponets/CrossIcon";
+import Navbar2 from "../NavComponents/Navbar2";
 
 function LoginPage() {
     const [loginEmail, setLoginEmail] = useState("");

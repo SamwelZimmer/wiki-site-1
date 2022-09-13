@@ -2,9 +2,9 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import { auth, sendPasswordReset } from "../firebase";
+import { auth, sendPasswordReset } from "../../firebase";
 import { motion } from "framer-motion";
-import Navbar2 from "./Navbar2";
+import Navbar2 from "../NavComponents/Navbar2";
 
 function ResetPassword() {
     const [email, setEmail] = useState("");

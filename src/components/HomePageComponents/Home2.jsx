@@ -6,6 +6,7 @@ import { auth } from "../../firebase";
 
 import Navbar3 from "../NavComponents/Navbar3";
 import ExplainAccordian from "./ExplainAccordian";
+import Footer from "../FooterComponents/Footer"
 
 function Home2() {
 
@@ -18,7 +19,7 @@ function Home2() {
             {user ? <Navbar3 icon={'avatar'} /> : <Navbar3 icon={'login'} />}
 
             <main>
-                <div className="w-screen my-16 lg:my-24">
+                <div className="absolute w-screen">
                     {/* from the company name at the top */}
                     <div className="w-screen flex flex-col items-center my-16 px-6 pb-6 lg:my-24 lg:px-12 lg:pb-12">
                         <h3 className="beige-text px-0 py-0 text-center md:text-2xl">Company Name</h3>
@@ -144,12 +145,12 @@ function Home2() {
                             </div>
                             <p className="brown-text opacity-40 text-xs pt-1 md:pt-2">**clears throat sensually** yearly plans benefit from a 20% reduction in price</p>
                         </div>
-                        <div className="relative dark-backdrop-box h-max flex flex-col py-12 px-6 md:px-12">
+                        <div className="relative dark-backdrop-box h-max flex flex-col py-12 mb-32 px-6 md:px-12">
                             <div className="flex flex-col text-center gap-3 md:my-12">
                                 <h3 className="px-0 brown-text text-3xl md:text-6xl">"But how does it work?"</h3>
                                 <h5 className="brown-text opacity-50 md:text-lg">Glad you asked, hypothetical person</h5>
                             </div>
-                            <div className="light-backdrop-box flex flex-col py-12 px-6">
+                            <div className="light-backdrop-box flex flex-col pt-12 pb-8 px-6">
                                 <div className="flex flex-col py-6 md:px-20">
                                     <h5 className="text-left brown-text text-xl md:text-3xl">Alright, i'ma give you the outline of the process.</h5>
                                     <motion.h6 className="w-full text-right brown-text opacity-50 md:text-xl" onHoverStart={ () => setNerdIsHover(!nerdIsHover) } onHoverEnd={ () => setNerdIsHover(!nerdIsHover) }>
@@ -161,17 +162,10 @@ function Home2() {
                                 </div>
                             </div>
                         </div>
+                        <Footer />
                     </div>
-
-                    
-
-                    
-
                 </div>
-
-                
             </main>
-
         </body>
     )
 }

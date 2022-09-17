@@ -63,8 +63,8 @@ const About = () => {
             {user ? <Navbar3 icon={"avatar"} /> : <Navbar3 icon={"login"} />}
 
             <main>
-                <div className="dark-backdrop-box absolute w-full top-16 h-1/4 md:top-24 md:h-1/2" />
-                <div className="relative w-screen my-16 px-6 py-6 lg:my-24 lg:px-12 lg:py-12">
+                <div className="dark-backdrop-box absolute w-full top-20 h-1/4 md:top-24 md:h-1/2" />
+                <div className="relative w-screen my-20 px-6 py-6 lg:my-24 lg:px-12 lg:py-12">
                     <div className="light-backdrop-box relative w-full h-max z-0 pb-3">
                         <div className="text-center mb-6 lg:mb-12 py-12 lg:py-16">
                             <h1 className="brown-text text-5xl md:text-8xl">Who are we?</h1>

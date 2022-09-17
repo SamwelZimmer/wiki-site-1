@@ -34,7 +34,7 @@ function Navbar3({ icon, color }) {
     
     return(
             // <div className="nav-position bg-transparent flex justify-between">
-            <div className={`${color ? "bg-slate-600" : "bg-transparent"} absolute top-0 left-0 w-screen flex flex-row justify-between items-center px-6 lg:px-12 h-16 lg:h-24`}>
+            <div className={`${color ? "bg-slate-600" : "bg-transparent"} z-50 absolute top-0 left-0 w-screen flex flex-row justify-between items-center px-6 lg:px-12 h-20 lg:h-24`}>
 
 
                 <LogoButton />

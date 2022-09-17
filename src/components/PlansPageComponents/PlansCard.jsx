@@ -420,30 +420,34 @@ function PlansCard({ darkCard, dealNo, time, hasButton, pointers }) {
 
   const CardPointers = () => {
     return (  
-      <ul style={{ color: cardTextColor }}>
-        <li>{pointers[0]}</li>
-        <li>{pointers[1]}</li>
-        <li>{pointers[2]}</li>
-      </ul>)
+      <div className="h-full w-full flex flex-col items-center justify-center">
+        <ul className="h-full flex flex-col gap-2 items-center justify-center" style={{ color: cardTextColor }}>
+          <li>{pointers[0]}</li>
+          <li>{pointers[1]}</li>
+          <li>{pointers[2]}</li>
+        </ul>
+      </div>
+
+     )
   }
 
   const BuyButton = () => {
 
     return (
-        <div className="buy-plan-container">
-          <div className="buy-plan-link">
+        <div className="w-full h-full">
+          <div className="h-full w-full flex items-center justify-center p-0">
               {/* <Link to={user ? toComponentB : "/loginprompt"} className="buy-plan-link"> */}
-              <motion.div 
-                className="buy-plan-btn centered-column"
+              <motion.button 
+                className="brown-bg flex flex-col gap-2 rounded-2xl p-3 items-center"
                 whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 // onClick={()=>{toPayPage()}}
                 onClick={handleClick}
                 // disabled={isLoading}
                 >
-                <p style={{paddingBottom: "1rem", color: "#E7E0D6", fontSize: '0.75rem'}}>I'ma buy this one</p>
+                <p className="light-text text-sm">I'ma buy this one</p>
                 <FiShoppingCart style={{ color: "#C0A483" }}/>
-              </motion.div>
+              </motion.button>
             {/* </Link>  */}
           </div>
         </div>
@@ -461,23 +465,25 @@ function PlansCard({ darkCard, dealNo, time, hasButton, pointers }) {
 
   return (
       <motion.div 
-        className="plans-card pointer"
+        className="plans-card z-10 h-full md:w-72 py-16 rounded-2xl flex flex-col items-center cursor-pointer"
         whileHover={{scale: 1.1}}
         style={ (mql && dealNo !== 1) ? { background: bgColor } : { background: bgColor, justifyContent: "center" } }
         onClick={togglePlanCardBody}
         variants={motionItem}
       >
-          <h2 style={{ color: cardTextColor }}>{dealTitle}</h2>
+        <div className="flex flex-col items-center">
+          <h2 className="text-3xl" style={{ color: cardTextColor }}>{dealTitle}</h2>
           <h3 style={{ color: cardPriceColor }}>
-              <span className="currencey-symbol">{dealNo !== 1 ? "£" : "" }</span>
-              <span className="price-card-value"  style={dealNo === 1 ? {paddingRight: "1rem"} :  {paddingRight: "0"}}>{price}</span>
-              <span className="price-card-timeperiod">{timeText}</span>
+            <span className="text-sm md:text-base">{dealNo !== 1 ? "£" : "" }</span>
+            <span className="text-5xl md:text-5xl"  style={dealNo === 1 ? {paddingRight: "1rem"} :  {paddingRight: "0"}}>{price}</span>
+            <span className="text-xs md:text-xs">{timeText}</span>
           </h3>
-          <Divider
-              primaryColor="red"
-              secondaryColor="grey"
-              heightValue={1}
-          ></Divider>
+        </div> 
+        <Divider
+            primaryColor="red"
+            secondaryColor="grey"
+            heightValue={1}
+        ></Divider>
           { buyVisible && hasButton ?  <BuyButton/> : <CardPointers/>}
       </motion.div>
   );
@@ -490,7 +496,7 @@ function Divider(props) {
     console.log(heightValue);
     return (
       <hr
-        className="plans-card-hr"
+        className="w-1/2"
         style={{
           color: primaryColor,
           backgroundColor: secondaryColor,

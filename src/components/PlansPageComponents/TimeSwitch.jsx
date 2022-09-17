@@ -23,8 +23,8 @@ export default function TimeSwitch({ childToParent }) {
 
 
     return(
-        <div className="privacy-switch" data-isOn={montly} onClick={toggleSwitch}>
-            <motion.div className="privacy-switch-handle" layout transition={spring}></motion.div>
+        <div className="switch-1" data-isOn={montly} onClick={toggleSwitch}>
+            <motion.div className="switch-1-handle" layout transition={spring}></motion.div>
         </div>
     );
 }

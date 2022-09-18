@@ -3,8 +3,10 @@ import ProductsPageProduct from "./ProductsPageProduct";
 import { motion } from "framer-motion";
 // import HamburgerMenu from "./HamburgerMenu";
 import Navbar2 from "../NavComponents/Navbar2";
+import Navbar3 from "../NavComponents/Navbar3";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
+import Footer from "../FooterComponents/Footer";
 
 const productTitles = ["Sound", "Images", "Documents", "Models"];
 const productDescription = [
@@ -32,35 +34,69 @@ export function ProductsPageContent() {
     };
 
     return (
-        <body className="products-page-bg">
-            {user ? <Navbar2  icon={'avatar'}/> : <Navbar2  icon={'login'}/>}
-            
-            <div id="backdrop-box"></div>
-            <motion.div id="products-grid"
-                variants={container}
-                initial="hidden"
-                animate="visible"
-            >
-                <div className="product-grid-item products-box" id="products-heading-position">
-                    <div id="product-page-heading">
-                        <h1>It's time to <br></br>pick your poison ...</h1>
+        <div className="w-full h-full bg-color">
+            <body className="products-page-bg bg-color w-full h-full absolute top-0 left-0 -z-20">
+                {user ? <Navbar3  icon={'avatar'}/> : <Navbar3  icon={'login'}/>}
+
+                <div id="backdrop-box"></div>
+                <motion.div id="products-grid"
+                    variants={container}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <div className="product-grid-item products-box" id="products-heading-position">
+                        <div className="w-full h-full flex items-center ">
+                            <h1 className="text-6xl md:text-7xl p-4">It's time to <br></br>pick your poison ...</h1>
+                        </div>
                     </div>
-                </div>
+                    
+                    <ProductsPageProduct boxColor={"offwhite"} title={productTitles[0]} content={productDescription[0]} btnText={"Feature Coming Soon"}  btnLink={''}/>
+                    <ProductsPageProduct boxColor={"green"} title={productTitles[1]} content={productDescription[1]} btnText={"Let's Get Going"} btnLink={user ? "/protect-image" : "/loginprompt"}/>
+                    <ProductsPageProduct boxColor={"brown"} title={productTitles[2]} content={productDescription[2]} btnText={"Feature Coming Soon"} btnLink={''} />
+                    <ProductsPageProduct boxColor={"grey"} title={productTitles[3]} content={productDescription[3]} btnText={"Feature Coming Soon"} btnLink={''} />
                 
-                <ProductsPageProduct boxColor={"offwhite"} title={productTitles[0]} content={productDescription[0]} btnText={"Feature Coming Soon"}  btnLink={''}/>
-                <ProductsPageProduct boxColor={"green"} title={productTitles[1]} content={productDescription[1]} btnText={"Let's Get Going"} btnLink={user ? "/protect-image" : "/loginprompt"}/>
-                <ProductsPageProduct boxColor={"brown"} title={productTitles[2]} content={productDescription[2]} btnText={"Feature Coming Soon"} btnLink={''} />
-                <ProductsPageProduct boxColor={"grey"} title={productTitles[3]} content={productDescription[3]} btnText={"Feature Coming Soon"} btnLink={''} />
-               
-                <div className="product-grid-item products-box" id="products-subheading-position">
-                    <div id="product-page-subheading">
-                        <h2>Which of your creations will you protect?</h2>
+                    <div className="product-grid-item products-box" id="products-subheading-position">
+                        <div className="w-full h-full flex items-center"> 
+                            <h2 className="brown-text opacity-70 p-4 text-2xl md:text-4xl">Which of your creations will you protect?</h2>
+                        </div>
                     </div>
-                </div>
-            </motion.div>
+                </motion.div>
+            </body>
+            <div className="absolute top-full left-0 w-full">
+                <Footer  />
+            </div>
+        </div>
 
 
-        </body>
+        // <body className="products-page-bg">
+        //     {/* {user ? <Navbar2  icon={'avatar'}/> : <Navbar2  icon={'login'}/>} */}
+        //     {user ? <Navbar3  icon={'avatar'}/> : <Navbar3  icon={'login'}/>}
+
+        //     <div id="backdrop-box"></div>
+        //     <motion.div id="products-grid"
+        //         variants={container}
+        //         initial="hidden"
+        //         animate="visible"
+        //     >
+        //         <div className="product-grid-item products-box" id="products-heading-position">
+        //             <div id="product-page-heading">
+        //                 <h1>It's time to <br></br>pick your poison ...</h1>
+        //             </div>
+        //         </div>
+                
+        //         <ProductsPageProduct boxColor={"offwhite"} title={productTitles[0]} content={productDescription[0]} btnText={"Feature Coming Soon"}  btnLink={''}/>
+        //         <ProductsPageProduct boxColor={"green"} title={productTitles[1]} content={productDescription[1]} btnText={"Let's Get Going"} btnLink={user ? "/protect-image" : "/loginprompt"}/>
+        //         <ProductsPageProduct boxColor={"brown"} title={productTitles[2]} content={productDescription[2]} btnText={"Feature Coming Soon"} btnLink={''} />
+        //         <ProductsPageProduct boxColor={"grey"} title={productTitles[3]} content={productDescription[3]} btnText={"Feature Coming Soon"} btnLink={''} />
+               
+        //         <div className="product-grid-item products-box" id="products-subheading-position">
+        //             <div id="product-page-subheading">
+        //                 <h2>Which of your creations will you protect?</h2>
+        //             </div>
+        //         </div>
+        //     </motion.div>
+        // </body>
+
     );
 }
 

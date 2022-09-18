@@ -45,7 +45,7 @@ const Cancel = () => {
 
   return (
 
-      <body className="absolute top-0 left-0 w-full">
+      <body className="absolute top-0 left-0 w-full bg-color">
         {user ? <Navbar3 icon={'avatar'} /> : <Navbar3 icon={'login'} />}
 
         <main className="flex flex-col w-full h-full mt-32 md:mt-24 px-6 md:px-12">

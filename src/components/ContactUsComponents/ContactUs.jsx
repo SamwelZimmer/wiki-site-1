@@ -107,7 +107,7 @@ const ContactUs = () => {
                             </div>
                             {disable ? <h4 className="brown-text opacity-20">Hold on whilst we send your message. I'm sure it was insightful</h4> :
                                 <motion.button 
-                                    className="green-bg rounded-2xl brown-text w-min p-3 px-4 self-center"
+                                    className="green-bg grey-text rounded-2xl w-min p-3 px-4 self-center"
                                     whileHover={{ scale: 1.1  }} 
                                     whileTap={{ scale: 0.95 }}
                                     type="submit"

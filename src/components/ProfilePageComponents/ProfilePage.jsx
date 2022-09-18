@@ -78,13 +78,26 @@ function ProfilePage() {
                         <div className="flex flex-row self-center justify-between items-center w-full md:px-6 md:w-1/2">
                             <div className="flex flex-col text-center gap-2">
                                 <p className="grey-text text-sm md:text-base">Current Plan:</p>
-                                <p className="beige-text md:text-lg">Indie Artist</p>
+                                <div className="flex flex-row items-center justify-center gap-2">
+                                    <p className="beige-text md:text-lg">Indie Artist</p>
+                                    <EditPlanButton />
+                                </div>
+                                
                             </div>
                             <div className="flex flex-col text-center gap-2">
                                 <p className="grey-text text-sm md:text-base">Profile Status:</p>
                                 <div className="flex flex-row gap-2 items-center justify-center">
                                     <p className="beige-text md:text-lg">Public</p>
-                                    <BsInfoCircle size={15} color={"#B6B2AB"} className="opacity-80" />
+                                    <div className="info-dropdown">
+                                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="info-btn flex items-center justify-center">
+                                            <BsInfoCircle size={15} color={"#B6B2AB"} className="opacity-80" />
+                                        </motion.button>
+                                        <div className="info-dropdown-menu flex flex-col bg-color rounded-2xl text-center">
+                                            <p className="brown-text opacity-80 text-sm">Once day (hopefully) you will have the option of showing your designs on a shared page and have ranking and all that nice stuff.</p>
+                                            <p className="brown-text opacity-50 text-xs">But not yet, and for now your account is private by default</p>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>  
                             <div className="flex flex-col text-center items-center gap-0">

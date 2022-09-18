@@ -24,9 +24,9 @@ export default function ExplainAccordian() {
                       <motion.li className="grey-bg w-full rounded-2xl p-5 overflow-hidden cursor-pointer" layout onClick={toggleOpen} initial={{ borderRadius: 10 }}>
                         <motion.div layout className="flex flex-row gap-0">
                           {/* <motion.div className="brown-bg w-8 md:w-12 aspect-square rounded-full" layout /> */}
-                          <motion.div className="flex flex-col w-full gap-2">
+                          <motion.div className="flex flex-col w-full gap-3">
                             <h3 className="p-0 white-text font-bold text-2xl">{i.title}</h3>
-                            <h3 className="p-0 self-center brown-text text-xl">{i.desc}</h3>
+                            <h3 className="p-0 brown-text text-xl">{i.desc}</h3>
                           </motion.div>
                         </motion.div>
                         <AnimatePresence>{isOpen && (

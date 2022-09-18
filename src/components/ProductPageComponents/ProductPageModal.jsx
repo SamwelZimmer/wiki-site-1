@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import ProductPageModalBackdrop from "./ProductPageModalBackdrop";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { CgCloseO } from "react-icons/cg";
-
 
 
 // this is used as the modal has 3 possible states
@@ -29,18 +29,15 @@ const dropIn = {
 };
 
 const ModalText = ({ title, content }) => (
-    <div className="products-page-text">
-      <h3 style={{"padding-bottom": "1rem", "padding-top": "1rem", "color": "#C0A483", fontSize: "3rem", textAlign: "center", paddingRight: "25px" }}>{title}</h3>
-      <h5 style={{"color": "#463C2C", fontSize: "1.5rem", "padding-bottom": "1rem", textAlign: "center" }}>
-        {content}
-      </h5>
-      {/* <h4 style={{"color": "#3C4733" }}>{featureStatus}</h4> */}
+    <div className="products-page-text flex flex-col text-center">
+      <h3 className="green-text text-2xl md:text-4xl">{title}</h3>
+      <h5 className="brown-text opacity-60 md:text-lg">{content}</h5>
     </div>
 );
 
 export const ModalButton = ({ onClick }) => (
     <motion.div
-      style={{"padding-top": "1rem", "color": "#C0A483", height: "10%" }}
+      className="beige-text"
       type="button"
       whileHover={{ scale: 1.1, rotate: 0 }}
       whileTap={{ scale: 0.95, rotate: 0 }}
@@ -50,18 +47,19 @@ export const ModalButton = ({ onClick }) => (
     </motion.div>
 );
 
-const StartProjectButton = ({ btnText, btnLink }) => (
-  <Link className="links" to={btnLink} style={{ textDecoration: 'none' }}>
+function StartProjectButton( {btnText, btnLink} ) {
+  const navigate = useNavigate();
+  return (
     <motion.button 
-      id="start-project-btn"
+      className="green-bg w-max p-3 rounded-2xl grey-text"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
+      onClick={() => navigate(btnLink)}
     >
       { btnText }
     </motion.button>
-  </Link>
-  
-)
+  );
+}
 
 
 const ProductsPageModal = ({ handleClose, content, title, btnText, btnLink }) => {
@@ -70,7 +68,7 @@ const ProductsPageModal = ({ handleClose, content, title, btnText, btnLink }) =>
       <ProductPageModalBackdrop onClick={handleClose}>
           <motion.div
             onClick={(e) => e.stopPropagation()}  // Prevent click from closing modal
-            className="products-page-modal"
+            className="light-backdrop-box flex flex-col items-center justify-center rounded-2xl w-2/3 md:w-1/2 px-4 py-8"
             variants={dropIn}
             initial="hidden"
             animate="visible"

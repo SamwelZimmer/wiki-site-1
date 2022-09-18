@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 function EditPlanButton() {
     return(
         <Link className="links" to={'/plans'} style={{ textDecoration: 'none' }} >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} >
-                <AiOutlineEdit style={{color: "#B6B2AB"}} size={25} />
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} >
+                <AiOutlineEdit style={{color: "#B6B2AB"}} size={20} />
             </motion.div>
         </Link> 
     );

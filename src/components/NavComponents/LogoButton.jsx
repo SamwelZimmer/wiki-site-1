@@ -8,7 +8,7 @@ function LogoButton() {
     return(
         <Link className="links" to={'/'} style={{ textDecoration: 'none' }}>
             <motion.div whileHover={{ scale: 1.1, rotate: -15  }} whileTap={{ scale: 0.95, rotate: 15 }} >
-                <BiHomeAlt style={{color: "#B6B2AB"}} size={25} />
+                <BiHomeAlt className="grey-text" size={25} />
             </motion.div>
         </Link>
     );

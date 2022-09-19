@@ -103,7 +103,7 @@ function LoginPage() {
             <main className="mt-20 lg:mt-24">
                 <div className="fixed top-0 left-0 w-screen h-screen -z-50 bg-color" />
                     {/* log in section */}
-                <div className="absolute dark-backdrop-box z-10 left-6 mr-6 top-20 p-8 md:w-2/5 md:left-12 md:top-32 md:p-10 md:mr-0" >
+                <div className="absolute dark-backdrop-box z-10 left-6 mr-6 top-20 p-8 md:w-2/5 md:left-12 md:top-32 md:p-10 md:mr-0 shadow-lg" >
                     <div className="w-full h-full flex flex-col">
                         <div className="flex flex-col gap-2">
                             <h1 className="brown-text md:text-6xl">Log In</h1>
@@ -142,7 +142,7 @@ function LoginPage() {
                                 </div>
                                 <div className="w-2/3 flex flex-row justify-between self-center">
                                     <motion.button 
-                                    className="h-min p-2 aspect-square rounded-2xl brown-bg flex items-center justify-center"
+                                    className="h-min p-2 aspect-square rounded-2xl brown-bg flex items-center justify-center shadow-md"
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.9 }}
                                     onClick={signInWithGoogle}
@@ -156,7 +156,7 @@ function LoginPage() {
                                         />
                                     </motion.button>
                                     <motion.button 
-                                    className="rounded-2xl green-bg grey-text text-lg w-1/2"
+                                    className="rounded-2xl green-bg grey-text text-lg w-1/2 shadow-md"
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.9 }}
                                     onClick={() => logInWithEmailAndPassword(loginEmail, loginPassword)}
@@ -178,7 +178,7 @@ function LoginPage() {
 
                 {/* sign up section  */}
                 <div className="absolute flex flex-col gap-20 w-full top-1/2 md:top-24 h-full">
-                    <div className="absolute light-backdrop-box w-full right-0 p-8 pt-32 md:right-12 md:p-10 md:w-3/5 md:py-20 flex justify-end">
+                    <div className="absolute light-backdrop-box w-full right-0 p-8 pt-32 md:right-12 md:p-10 md:w-3/5 md:py-20 flex justify-end shadow-md">
                         <div className="w-full md:w-5/6 md:flex">
                             <div className="flex flex-col w-full text-center">
                                 <div className="flex flex-col items-center gap-2">
@@ -262,7 +262,7 @@ function LoginPage() {
 
                                     <div className="w-2/3 flex flex-row justify-between self-center">
                                         <motion.button 
-                                        className="h-min p-2 aspect-square rounded-2xl brown-bg flex items-center justify-center"
+                                        className="h-min p-2 aspect-square rounded-2xl brown-bg flex items-center justify-center shadow-md"
                                         whileHover={{ scale: 1.1 }}
                                         whileTap={{ scale: 0.9 }}
                                         onClick={signInWithGoogle}
@@ -276,7 +276,7 @@ function LoginPage() {
                                             />
                                         </motion.button>
                                         <motion.button 
-                                        className="rounded-2xl green-bg grey-text text-lg w-1/2"
+                                        className="rounded-2xl green-bg grey-text text-lg w-1/2 shadow-md"
                                         whileHover={{ scale: 1.1 }}
                                         whileTap={{ scale: 0.9 }}
                                         onClick={ () => {

@@ -20,8 +20,8 @@ const ExpandingTile = (num) => {
     }
 
     const [tileOpen, setTileOpen] = useState(false);
-    let closedClass = `h-1/3 aspect-[2/1] rounded-2xl ${cards[num.num].color} flex justify-center items-center pointer`;
-    let openClass = `h-full w-full rounded-2xl ${cards[num.num].color} flex flex-col px-4 py-8 md:px-12 md:py-12 justify-around items-left gap-2 pointer`;
+    let closedClass = `h-1/3 aspect-[2/1] rounded-2xl ${cards[num.num].color} flex justify-center items-center pointer shadow-md`;
+    let openClass = `h-full w-full rounded-2xl ${cards[num.num].color} flex flex-col px-4 py-8 md:px-12 md:py-12 justify-around items-left gap-2 pointer shadow-md`;
 
     return (
         <div className="w-full aspect-[2/1] flex flex-col justify-center items-center">
@@ -65,7 +65,7 @@ const About = () => {
             <main>
                 <div className="dark-backdrop-box absolute w-full top-20 h-1/4 md:top-24 md:h-1/2" />
                 <div className="relative w-screen my-20 px-6 py-6 lg:my-24 lg:px-12 lg:py-12">
-                    <div className="light-backdrop-box relative w-full h-max z-0 pb-3">
+                    <div className="light-backdrop-box shadow-lg relative w-full h-max z-0 pb-3">
                         <div className="text-center mb-6 lg:mb-12 py-12 lg:py-16">
                             <h1 className="brown-text text-5xl md:text-8xl">Who are we?</h1>
                             <motion.h3 onHoverStart={handleMouseOver} onHoverEnd={handleMouseOut} className="brown-text opacity-50 text-1xl md:text-2xl">
@@ -87,7 +87,7 @@ const About = () => {
                         <p className="brown-text opacity-50 md:text-xl">And finally ...</p>
                         <p className="brown-text opacity-50 md:text-xl">... our turn</p>
                     </div>
-                    <div className="dark-backdrop-box flex flex-col w-full h-max py-3 px-3 md:py-12 md:px-12">
+                    <div className="dark-backdrop-box shadow-md flex flex-col w-full h-max py-3 px-3 md:py-12 md:px-12">
                         <div className="flex flex-col justify-center gap-2 md:gap-3 items-center md:py-4">
                             <h4 className="brown-text text-2xl md:text-5xl" >Check the team.</h4>
                             <h5 className="brown-text opacity-40 md:text-xl">don't be shy, click my face.</h5>

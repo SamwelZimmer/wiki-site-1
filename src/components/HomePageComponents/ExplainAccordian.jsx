@@ -21,12 +21,12 @@ export default function ExplainAccordian() {
               const toggleOpen = () => setIsOpen(!isOpen);
         
                   return (
-                      <motion.li className="grey-bg w-full rounded-2xl p-5 overflow-hidden cursor-pointer" layout onClick={toggleOpen} initial={{ borderRadius: 10 }}>
+                      <motion.li className="bg-color shadow-md w-full rounded-2xl p-5 overflow-hidden cursor-pointer" layout onClick={toggleOpen} initial={{ borderRadius: 10 }}>
                         <motion.div layout className="flex flex-row gap-0">
                           {/* <motion.div className="brown-bg w-8 md:w-12 aspect-square rounded-full" layout /> */}
                           <motion.div className="flex flex-col w-full gap-3">
-                            <h3 className="p-0 white-text font-bold text-2xl">{i.title}</h3>
-                            <h3 className="p-0 brown-text text-xl">{i.desc}</h3>
+                            <h3 className="p-0 brown-text font-bold text-2xl">{i.title}</h3>
+                            <h3 className="p-0 green-text text-xl">{i.desc}</h3>
                           </motion.div>
                         </motion.div>
                         <AnimatePresence>{isOpen && (
@@ -37,7 +37,7 @@ export default function ExplainAccordian() {
                             exit={{ opacity: 0 }}
                             className="mt-8"
                           >
-                            <p className="white-text opacity-60">{i.explain}</p>
+                            <p className="grey-text opacity-60">{i.explain}</p>
                             {/* text placeholders */}
                             {/* <div className="w-full bg-slate-500 h-2 mt-3 rounded-lg" /> */}
                             {/* <div className="w-full bg-slate-500 h-2 mt-3 rounded-lg" />

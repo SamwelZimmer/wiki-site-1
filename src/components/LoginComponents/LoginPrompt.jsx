@@ -13,7 +13,7 @@ function LoginPrompt() {
             <div className="absolute w-full h-full">
                 <div className="w-full h-full px-6 md:px-12">
                     <h1 className="brown-text text-center text-5xl md:text-7xl">Nuh uh uh.</h1>
-                    <div className="light-backdrop-box flex flex-col mt-8 py-12 px-12 md:px-28">
+                    <div className="light-backdrop-box flex flex-col mt-8 py-12 px-12 md:px-28 shadow-md">
                         <div className="w-full flex flex-col">
                             <h2 className="brown-text text-3xl md:text-5xl">You're not going</h2>
                             <h2 className="brown-text text-3xl md:text-5xl">anywhere...</h2>
@@ -25,7 +25,7 @@ function LoginPrompt() {
                     </div>
                     <Link to={'/login'} className="flex flex-col justify-center items-center">
                         <motion.button 
-                        className="dark-backdrop-box rounded-2xl p-4 mt-8"
+                        className="dark-backdrop-box rounded-2xl p-4 mt-8 shadow-md"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         >

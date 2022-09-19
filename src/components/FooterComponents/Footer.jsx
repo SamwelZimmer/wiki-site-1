@@ -10,8 +10,8 @@ export default function Footer() {
         <footer class="p-6 relative light-backdrop-box rounded-lg shadow md:px-12 md:py-12">
             <div class="sm:flex sm:items-center sm:justify-between">
                 <div class="pointer flex items-center mb-4 sm:mb-0">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-8" alt="Flowbite Logo" />
-                    <motion.span whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} onClick={ () => navigate("/") } class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Company Name</motion.span>
+                    <motion.img whileHover={{ scale: 1.1, rotate: 15 }} whileTap={{ scale: 0.9, rotate: -15}} src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-8 cursor-default" alt="Logo" />
+                    <motion.span whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} onClick={ () => navigate("/") } class="self-center text-2xl font-semibold whitespace-nowrap brown-text">Company Name</motion.span>
                 </div>
                 <ul class="flex flex-wrap items-center mb-6 text-xs md:text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
                     <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} onClick={ () => navigate("/about") } >
@@ -20,20 +20,20 @@ export default function Footer() {
                     <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} onClick={null} >
                         <p href="#" class="pointer grey-text mr-4 hover:underline md:mr-6">Privacy Policy</p>
                     </motion.li>
-                    <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} onClick={null} >
+                    {/* <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} onClick={null} >
                         <p href="#" class="pointer grey-text mr-4 hover:underline md:mr-6 ">Licensing</p>
-                    </motion.li>
+                    </motion.li> */}
                     <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} onClick={ () => navigate("/contact-us") } >
                         <p href="#" class="pointer grey-text hover:underline">Contact</p>
                     </motion.li>
                 </ul>
             </div>
-            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
             <div className="flex flex-row justify-center items-center">
                 {/* <span><motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} onClick={ () => navigate("/") } class="hover:underline">Company Name™</motion.p>. All Rights Reserved.            </span> */}
-                <p class="block text-xs text-gray-500 sm:text-center dark:text-gray-400 md:text-sm">© {current.getFullYear()}</p>
-                <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} onClick={ () => navigate("/") } class="hover:underline">Company Name™</motion.p>
-                <p class="block text-xs text-gray-500 sm:text-center dark:text-gray-400 md:text-sm">All Rights Reserved.</p>
+                <p class="block text-xs grey-text sm:text-center md:text-sm">© {current.getFullYear()}</p>
+                <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} onClick={ () => navigate("/") } class="hover:underline cursor-pointer">Company Name™</motion.p>
+                <p class="block text-xs grey-text sm:text-center md:text-sm">All Rights Reserved.</p>
             </div>
         </footer>
     );

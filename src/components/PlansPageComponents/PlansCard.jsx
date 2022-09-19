@@ -438,7 +438,7 @@ function PlansCard({ darkCard, dealNo, time, hasButton, pointers }) {
           <div className="h-full w-full flex items-center justify-center p-0">
               {/* <Link to={user ? toComponentB : "/loginprompt"} className="buy-plan-link"> */}
               <motion.button 
-                className="brown-bg flex flex-col gap-2 rounded-2xl p-3 items-center"
+                className="brown-bg flex flex-col gap-2 rounded-2xl p-3 items-center shadow-md"
                 whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 // onClick={()=>{toPayPage()}}
@@ -465,7 +465,7 @@ function PlansCard({ darkCard, dealNo, time, hasButton, pointers }) {
 
   return (
       <motion.div 
-        className="plans-card z-10 h-full md:w-72 py-16 rounded-2xl flex flex-col items-center cursor-pointer"
+        className="plans-card z-10 h-full md:w-72 py-16 rounded-2xl flex flex-col items-center cursor-pointer shadow-md"
         whileHover={{scale: 1.1}}
         style={ (mql && dealNo !== 1) ? { background: bgColor } : { background: bgColor, justifyContent: "center" } }
         onClick={togglePlanCardBody}

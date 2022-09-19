@@ -34,11 +34,11 @@ function ProtectImagePage() {
             <main className="bg-color w-full h-full mt-20 mb-80 md:my-24 px-6 md:px-12">
 
                 <div className="absolute top-1/2 md:top-24 right-0 w-full md:w-2/5 h-1/2 md:h-full px-6 md:pr-12 md:pl-0">
-                    <div className="light-backdrop-box h-full w-full" />
+                    <div className="light-backdrop-box shadow-md h-full w-full" />
                 </div>
 
                 <div className="absolute w-full h-1/2 top-20 md:top-24 left-0 px-12 md:pt-8 md:pr-20">
-                    <div className="dark-backdrop-box w-full h-full">
+                    <div className="dark-backdrop-box shadow-lg w-full h-full">
                     </div>
                 </div>
                 

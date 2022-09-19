@@ -2,11 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-
-
 import ProductsPageModal from "./ProductPageModal";
 
-function ProductsPageProduct({ boxColor, title, content, btnText, btnLink }) {
+function ProductsPageProduct({ boxColor, img, title, content, btnText, btnLink }) {
 
 
     const divId = boxColor + "-box-position"
@@ -23,13 +21,16 @@ function ProductsPageProduct({ boxColor, title, content, btnText, btnLink }) {
           y: 0,
           opacity: 1
         }
-      };
+    };
+
 
     return (
         <motion.div className="product-grid-item products-box" id={divId} variants={item}>
-            <motion.div id={motionDivId} className="pointer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={ () => (modalOpen ? close() : open()) }></motion.div>
-
+            <motion.div id={motionDivId} className="pointer p-4 shadow-md" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={ () => (modalOpen ? close() : open()) }>
+                {img}
+            </motion.div>
             <AnimatePresence
+    
             // disable any intial animations on children which are present when component first rendered
             initial={false}
             // only render components one at a time

@@ -56,7 +56,7 @@ const ContactUs = () => {
             {user ? <Navbar3 icon={"avatar"}/> : <Navbar3 icon={"login"} />}
             <div className="light-backdrop-box absolute left-0 w-full h-1/2 top-20 md:top-24 " />
             <div className="w-full h-full absolute" >
-                <div className="dark-backdrop-box flex flex-col justify-around mx-6 p-6 py-12 md:mx-12 md:p-12">
+                <div className="dark-backdrop-box shadow-xl flex flex-col justify-around mx-6 p-6 py-12 md:mx-12 md:p-12">
                     <div className="flex flex-col text-center gap-2">
                         <h1 className="brown-text " >Wanna Talk?</h1>
                         <h4 className="brown-text opacity-20"><strike>I've got a spare pillow</strike></h4>
@@ -107,7 +107,7 @@ const ContactUs = () => {
                             </div>
                             {disable ? <h4 className="brown-text opacity-20">Hold on whilst we send your message. I'm sure it was insightful</h4> :
                                 <motion.button 
-                                    className="green-bg grey-text rounded-2xl w-min p-3 px-4 self-center"
+                                    className="green-bg grey-text rounded-2xl w-min p-3 px-4 self-center shadow-md"
                                     whileHover={{ scale: 1.1  }} 
                                     whileTap={{ scale: 0.95 }}
                                     type="submit"

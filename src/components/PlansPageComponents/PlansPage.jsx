@@ -69,7 +69,7 @@ function PlansPage() {
 
             <main className="w-full mt-20 md:my-28 md:mb-80 px-6 md:px-12">
 
-                <div className="dark-backdrop-box fixed flex flex-col md:flex-row md:absolute top-20 pb-24 px-6 md:top-2/3 left-0 w-full h-1/2 md:h-2/3 md:pt-24 md:px-12">
+                <div className="dark-backdrop-box fixed flex flex-col md:flex-row md:absolute top-20 pb-24 px-6 md:top-2/3 left-0 w-full h-1/2 md:h-2/3 md:pt-24 md:px-12 shadow-lg">
                     <div className="w-full md:w-1/2 flex flex-col px-12 pt-12 md:pb-12 md:justify-end">
                         <h1 className="w-full text-3xl md:text-6xl">Pick a card ...</h1>
                         <h1 className="w-full text-right text-3xl md:text-6xl">... any card</h1>

@@ -36,14 +36,14 @@ function ResetPassword() {
     return (
         <body className="bg-color mt-16 lg:mt-20">
             {user ? <Navbar3  icon={'avatar'} /> : <Navbar3  icon={'login'}/>}
-            <div className="light-backdrop-box flex flex-col absolute top-28 left-6 w-3/4 h-1/2 p-6 md:top-24 md:left-12 md:w-2/3 md:h-2/3 md:p-12 md:gap-20" >
+            <div className="light-backdrop-box flex flex-col absolute top-28 left-6 w-3/4 h-1/2 p-6 md:top-24 md:left-12 md:w-2/3 md:h-2/3 md:p-12 md:gap-20 shadow-md" >
                 <h1 className="brown-text text-3xl md:text-5xl">You went and forgot your password, didn't you?</h1>
                 <div className="flex flex-col">
                     <h2 className="brown-text opacity-60 text-xl md:text-3xl">Maybe you should be more careful</h2>
                     <h3 className="brown-text opacity-30 p-0 md:text-xl">Bozo</h3>
                 </div>
             </div>
-            <div className="dark-backdrop-box flex flex-col items-center absolute top-1/2 right-6 w-2/3 p-6 md:top-2/3 md:right-12 md:w-1/2 md:gap-2">
+            <div className="dark-backdrop-box flex flex-col items-center absolute top-1/2 right-6 w-2/3 p-6 md:top-2/3 md:right-12 md:w-1/2 md:gap-2 shadow-lg">
                 <input 
                     type="email"
                     className="form-1 rounded-2xl w-full h-12 p-4"
@@ -54,7 +54,7 @@ function ResetPassword() {
                 <motion.button
                     whileHover={{scale: 1.05}}
                     whileTap={{scale: 0.95}}
-                    className="green-bg grey-text rounded-2xl w-40 md:w-max text-base p-2 md:px-4"
+                    className="green-bg grey-text rounded-2xl w-40 md:w-max text-base py-2 sm:px-2 md:px-4 shadow-md"
                     onClick={() => {
                         sendPasswordReset(email); 
                         navigate("/login")}}

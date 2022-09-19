@@ -68,7 +68,7 @@ const ProductsPageModal = ({ handleClose, content, title, btnText, btnLink }) =>
       <ProductPageModalBackdrop onClick={handleClose}>
           <motion.div
             onClick={(e) => e.stopPropagation()}  // Prevent click from closing modal
-            className="light-backdrop-box flex flex-col items-center justify-center rounded-2xl w-2/3 md:w-1/2 px-4 py-8"
+            className="light-backdrop-box flex flex-col items-center justify-center rounded-2xl w-2/3 md:w-1/2 px-4 py-8 shadow-2xl"
             variants={dropIn}
             initial="hidden"
             animate="visible"

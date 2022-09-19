@@ -70,8 +70,8 @@ function ProfilePage() {
                     </div>
                 </div>
                 <div className="w-full z-10 px-6 pt-12 md:p-12">
-                    <div className="light-backdrop-box flex flex-col px-6 py-6 md:px-12">
-                        <div className="dark-backdrop-box items-center w-full flex flex-row p-3 h-28 md:p-6 md:h-48 md:gap-12">
+                    <div className="light-backdrop-box flex flex-col px-6 py-6 md:px-12 shadow-md">
+                        <div className="dark-backdrop-box items-center w-full flex flex-row p-3 h-28 md:p-6 md:h-48 md:gap-12 shadow-md">
                             <img className="h-full aspect-square rounded-full" src={profileAvatar} alt="Avatar" />
                             <h1 className="brown-text text-center text-lg md:text-5xl">{name}</h1>
                         </div>
@@ -92,7 +92,7 @@ function ProfilePage() {
                                         <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="info-btn flex items-center justify-center">
                                             <BsInfoCircle size={15} color={"#B6B2AB"} className="opacity-80" />
                                         </motion.button>
-                                        <div className="info-dropdown-menu flex flex-col bg-color rounded-2xl text-center">
+                                        <div className="info-dropdown-menu flex flex-col bg-color rounded-2xl text-center w-52 p-4">
                                             <p className="brown-text opacity-80 text-sm">Once day (hopefully) you will have the option of showing your designs on a shared page and have ranking and all that nice stuff.</p>
                                             <p className="brown-text opacity-50 text-xs">But not yet, and for now your account is private by default</p>
                                         </div>

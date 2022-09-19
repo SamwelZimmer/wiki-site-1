@@ -22,7 +22,7 @@ function MyWorkWindow() {
   return (
     <div className="absolute left-0 w-full flex flex-col top-3/4 md:top-full">
       <div className=" w-full flex flex-col  px-6  md:px-12">
-        <div className="my-work-window w-full h-min rounded-t-2xl overflow-hidden flex flex-col light-backdrop-box">
+        <div className="my-work-window w-full h-min rounded-t-2xl overflow-hidden flex flex-col light-backdrop-box shadow-lg">
           <nav className="my-work-navigation green-bg pt-3 rounded-t-2xl h-16 brown-text">
             <ul id="my-work-map" class="p-0 m-0 text-sm font-medium list-none flex flex-row h-full gap-0 px-3 justify-between">
               {tabs.map((i) => (

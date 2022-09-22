@@ -48,6 +48,9 @@ export default function ProtectImagePage() {
     const [showSubmit, setShowSubmit] = useState(true);
     const [imgName, setImgName] = useState("");
 
+
+    const [docId, setDocId] = useState("")
+
     let nameValid;
     let descValid;
 
@@ -106,16 +109,19 @@ export default function ProtectImagePage() {
             setShowSubmit(false);
             uploadFiles(file, kebabTitle);
             const project = {fileType, projectTitle, projectDesc, projectJustif, uploadDate};
-            createProtectImage(user, project, `/${user.uid}/images/${kebabTitle}`);
+            createProtectImage(user, project, `/${user.uid}/images/${kebabTitle}`)
+            .then((res) => setDocId(res))
         } else {
             alert("Use an image, yeah?");
         }
     }
 
     if (progress === 100) {
-        const data = {storagePath: `/${user.uid}/images/${toKebabCase(projectTitle)}`};
+        const data = {storagePath: `/${user.uid}/images/${toKebabCase(projectTitle)}`, docId: docId};
         setTimeout(() => { navigate("/lovely", {state: data}) }, 2000);
     }
+
+  
 
     return (
 

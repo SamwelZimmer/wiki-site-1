@@ -27,9 +27,23 @@ function ProfilePage() {
 
     const [user, loading ] = useAuthState(auth);
     const [name, setName] = useState("");
+    const [plan, setPlan] = useState("");
+    const [status, setStatus] = useState("");
+
     const navigate = useNavigate();
 
     let mql = window.matchMedia('(max-width: 35em)');
+
+    const whatPlan = (planNo) => {
+        if (planNo === 1) {setPlan("Lil toe-tipper")}
+        else if (planNo === 2) {setPlan("Indie-creative")}
+        else if (planNo === 3) {setPlan("Kinda big-shot")}
+    }
+
+    const whatStatus = (pub) => {
+        if (pub) {setStatus("Public")}
+        else {setStatus("Private")}
+    }
 
     const fetchUserName = async () => {
         try {
@@ -37,6 +51,8 @@ function ProfilePage() {
           const doc = await getDocs(q);
           const data = doc.docs[0].data();
           setName(data.name);
+          whatPlan(data.plan);
+          whatStatus(data.public);
         } catch (err) {
           console.error(err);
           alert("An error occured while fetching user data");
@@ -79,7 +95,7 @@ function ProfilePage() {
                             <div className="flex flex-col text-center gap-2">
                                 <p className="grey-text text-sm md:text-base">Current Plan:</p>
                                 <div className="flex flex-row items-center justify-center gap-2">
-                                    <p className="beige-text md:text-lg">Indie Artist</p>
+                                    <p className="beige-text md:text-lg">{plan}</p>
                                     <EditPlanButton />
                                 </div>
                                 
@@ -87,7 +103,7 @@ function ProfilePage() {
                             <div className="flex flex-col text-center gap-2">
                                 <p className="grey-text text-sm md:text-base">Profile Status:</p>
                                 <div className="flex flex-row gap-2 items-center justify-center">
-                                    <p className="beige-text md:text-lg">Public</p>
+                                    <p className="beige-text md:text-lg">{status}</p>
                                     <div className="info-dropdown">
                                         <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="info-btn flex items-center justify-center">
                                             <BsInfoCircle size={15} color={"#B6B2AB"} className="opacity-80" />

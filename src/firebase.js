@@ -40,6 +40,8 @@ const signInWithGoogle = async () => {
                 name: user.displayName,
                 authProvider: "google",
                 email: user.email,
+                public: false,
+                plan: 1
             });
         }
         // querying  querying the database to check if this user is registered in our database with the user uid. if no we make new user
@@ -69,6 +71,8 @@ const registerWithEmailAndPassword = async (name, email, password) => {
         name,
         authProvider: "local",
         email,
+        public: false,
+        plan: 1
       });
     } catch (err) {
       console.error(err);
@@ -107,20 +111,20 @@ const createProtectImage = async (user, uploadedFiles, storageFilePath) => {
             secureStatus: "uploaded"
         });
         console.log("Document written with ID: ", docRef.id);
-        // once the file is uploaded, firebase doc is created and then the name for this doc is added to the sirebase storage metadata
-        const newMetadata = {
-            customMetadata: {
-                firestoreDocId: docRef.id
-            },
-        };
-        updateStorageMetadata(storageFilePath, newMetadata)
-        // return docRef.id;
+        return docRef.id;
     }
 };
 
 // update firebase storage metadata
-const updateStorageMetadata = async (filePath, newMetadata) => {
+const updateStorageMetadata = async (filePath, docID) => {
     const storageRef = ref(storage, filePath);
+
+    const newMetadata = {
+        customMetadata: {
+            firestoreDocId: docID
+        },
+    };
+
     await updateMetadata(storageRef, newMetadata)
 };
 
@@ -138,22 +142,36 @@ const getDocData = async (user, docId) => {
     // doc.data() will be undefined in this case
     console.log("No such document!");
     }
-
-    // await getDoc(docRef).then(
-    //     (docSnap) => {
-    //         if (docSnap.exists()) {
-    //             // console.log("Document data:", docSnap.data());
-    //             return docSnap.data()
-    //         } else {
-    //         // doc.data() will be undefined in this case
-    //         console.log("No such document!");
-    //         }
-    //     }
-    // )
-   
-
-
 }
+
+// get all users uploads
+const getAllUploads = async (user) => {
+    const projectBoxContents = [{ title: 'example project', content: 'your projects will appear here', justif: 'your justification', date: "my/birth/day", type: 'jpg? pdf? idk?', status: 'single' }];
+    const querySnapshot = await getDocs(collection(db, "users", `${user.uid}`, "uploads"));
+    querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        
+        // console.log(doc.id, " => ", doc.data());
+        // console.log(JSON.stringify(doc.data()));
+
+
+        const postTitle = doc.data().project.projectTitle;
+        const postDesc = doc.data().project.projectDesc;
+        const postJust = doc.data().project.projectJustif;
+        const postType = doc.data().project.fileType;
+        const postDate = doc.data().project.uploadDate;
+        const postStatus = doc.data().secureStatus;
+
+        projectBoxContents.push({title: postTitle, content: postDesc, justif: postJust, date: postDate, type: postType, status: postStatus})
+        // console.log(JSON.stringify(projectBoxContents))
+        // return projectBoxContents;
+        // return doc.data();
+    });
+    // return (JSON.stringify(projectBoxContents));
+    return (projectBoxContents);
+}
+
+
 
 // const shitSuccesful = async (user, data) => {
 //     try {
@@ -185,6 +203,8 @@ export {
     sendPasswordReset,
     logout,
     createProtectImage,
+    updateStorageMetadata,
     getDocData,
+    getAllUploads,
     // shitSuccesful,
   };

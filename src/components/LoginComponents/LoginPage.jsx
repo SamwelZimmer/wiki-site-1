@@ -33,7 +33,7 @@ function LoginPage() {
     }
 
     function nameValidation(str) {
-        return /^[A-Za-z-]+$/.test(str);
+        return /^[A-Za-z ]+$/.test(str);
     } 
 
     let loginEmailValid;
@@ -193,7 +193,7 @@ function LoginPage() {
                                             <div className="flex flex-row justify-between items-center w-full">
                                                 <input 
                                                     required 
-                                                    pattern="[A-Za-z-]{2,}"
+                                                    pattern="[A-Za-z ]{2,}"
                                                     title="Is that really your name?"
                                                     type={"text"} 
                                                     name={"usernameSignUp"} 

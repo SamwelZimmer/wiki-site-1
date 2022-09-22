@@ -4,7 +4,7 @@ import Navbar3 from "../NavComponents/Navbar3";
 import Footer from "../FooterComponents/Footer";
 import { motion } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
-import { storage, getDocData } from "../../firebase";
+import { storage, getDocData, updateStorageMetadata } from "../../firebase";
 import { ref, getMetadata } from "firebase/storage";
 
 import { BiHomeAlt } from "react-icons/bi";
@@ -24,14 +24,14 @@ export default function Lovely() {
     // i think it is better to get it from firetore than storage as the data is easier to update using firestore
 
     const storagePath = location.state.storagePath;
+    const docId = location.state.docId;
+    updateStorageMetadata(storagePath, docId)
     const storageRef = ref(storage, storagePath); 
 
     const [docTitle, setDocTitle] = useState("");
     const [docDesc, setDocDesc] = useState("");
     const [docDate, setDocDate] = useState("");
     const [docStatus, setDocStatus] = useState("");
-
-
 
     // Get metadata properties
     getMetadata(storageRef)
@@ -44,11 +44,6 @@ export default function Lovely() {
                 setDocDesc(response["project"]["projectDesc"])
                 setDocDate(response["project"]["uploadDate"])
         })
-        // docTitle = docData[""]
-        // docDesc = docData.project.projectDesc;
-        // docDate = docData.project.uploadDate;
-
-
     })
     .catch((error) => {
         console.log(`Error occured -- ${error}`)

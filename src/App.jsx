@@ -4,6 +4,7 @@ import Home2 from "./components/HomePageComponents/Home2";
 import ProductsPage from './components/ProductPageComponents/ProductsPage';
 import ProfilePage from './components/ProfilePageComponents/ProfilePage';
 import ProtectImagePage from './components/ProtectPagesComponets/ProtectImagePage';
+import Lovely from "./components/ProtectPagesComponets/Lovely";
 import LoginPage from './components/LoginComponents/LoginPage';
 import SettingsPage from './components/ProfilePageComponents/SettingsPage';
 import LoginPrompt from './components/LoginComponents/LoginPrompt';
@@ -31,6 +32,7 @@ function App() {
         <Route path='/products' element={<ProductsPage />} />
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/protect-image' element={<ProtectImagePage />} />
+        <Route path='/lovely' element={<Lovely />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/settings' element={<SettingsPage />} />
         <Route path='/loginprompt' element={<LoginPrompt />} />

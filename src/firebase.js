@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
+import { getStorage, ref, updateMetadata } from "firebase/storage";
 // import { getAnalytics } from "firebase/analytics";
 import { GoogleAuthProvider, getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut } from 'firebase/auth';
-import { getFirestore, query, getDocs, setDoc, collection, where, addDoc, doc } from 'firebase/firestore';
+import { getFirestore, query, getDocs, getDoc, setDoc, collection, where, addDoc, doc } from 'firebase/firestore';
 // import { useCollection, useCollectionData, useDocument } from "react-firebase-hooks/firestore"
 
 
@@ -19,6 +20,7 @@ const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app);
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -94,16 +96,63 @@ const logout = () => {
 
 // -------------------------------------------------- file storage
 // this creates a firebase subcollection called "uploads" which stores
-const createProtectImage = async (user, uploadedFiles) => {
+const createProtectImage = async (user, uploadedFiles, storageFilePath) => {
     const postRef = collection(db, "users", `${user.uid}`, "uploads");
     const q = query(postRef, where("uid", "==", user.uid));
     const docs = await getDocs(q);
     if (docs.docs.length === 0) {
-        await addDoc(postRef, {
+        const docRef = await addDoc(postRef, {
             user: user.uid,
-            project: uploadedFiles
+            project: uploadedFiles,
+            secureStatus: "uploaded"
         });
+        console.log("Document written with ID: ", docRef.id);
+        // once the file is uploaded, firebase doc is created and then the name for this doc is added to the sirebase storage metadata
+        const newMetadata = {
+            customMetadata: {
+                firestoreDocId: docRef.id
+            },
+        };
+        updateStorageMetadata(storageFilePath, newMetadata)
+        // return docRef.id;
     }
+};
+
+// update firebase storage metadata
+const updateStorageMetadata = async (filePath, newMetadata) => {
+    const storageRef = ref(storage, filePath);
+    await updateMetadata(storageRef, newMetadata)
+};
+
+// get data from a single firestore document
+const getDocData = async (user, docId) => {
+    const docRef = doc(db, "users", `${user.uid}`, "uploads", `${docId}`);
+
+
+    const docSnap = await getDoc(docRef)
+
+    if (docSnap.exists()) {
+        // console.log("Document data:", docSnap.data());
+        return docSnap.data()
+    } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+    }
+
+    // await getDoc(docRef).then(
+    //     (docSnap) => {
+    //         if (docSnap.exists()) {
+    //             // console.log("Document data:", docSnap.data());
+    //             return docSnap.data()
+    //         } else {
+    //         // doc.data() will be undefined in this case
+    //         console.log("No such document!");
+    //         }
+    //     }
+    // )
+   
+
+
 }
 
 // const shitSuccesful = async (user, data) => {
@@ -129,11 +178,13 @@ const createProtectImage = async (user, uploadedFiles) => {
 export {
     auth,
     db,
+    storage,
     signInWithGoogle,
     logInWithEmailAndPassword,
     registerWithEmailAndPassword,
     sendPasswordReset,
     logout,
     createProtectImage,
+    getDocData,
     // shitSuccesful,
   };

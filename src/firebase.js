@@ -3,6 +3,7 @@ import { getStorage, ref, updateMetadata } from "firebase/storage";
 // import { getAnalytics } from "firebase/analytics";
 import { GoogleAuthProvider, getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut } from 'firebase/auth';
 import { getFirestore, query, getDocs, getDoc, setDoc, collection, where, addDoc, doc } from 'firebase/firestore';
+import { useEffect, useState } from "react";
 // import { useCollection, useCollectionData, useDocument } from "react-firebase-hooks/firestore"
 
 
@@ -41,7 +42,8 @@ const signInWithGoogle = async () => {
                 authProvider: "google",
                 email: user.email,
                 public: false,
-                plan: 1
+                plan: 1,
+                avatar: GeneratePPCode()
             });
         }
         // querying  querying the database to check if this user is registered in our database with the user uid. if no we make new user
@@ -72,7 +74,8 @@ const registerWithEmailAndPassword = async (name, email, password) => {
         authProvider: "local",
         email,
         public: false,
-        plan: 1
+        plan: 1,
+        avatar: GeneratePPCode()
       });
     } catch (err) {
       console.error(err);
@@ -97,6 +100,15 @@ const logout = () => {
     // window.location.reload(true);
 };
 
+// Creating values to be interpreted as randomly assigned profile picture
+function GeneratePPCode() {
+    const bgDir = Math.floor(Math.random() * 8);
+    const bgFrom = Math.floor(Math.random() * 8);
+    const bgTo = Math.floor(Math.random() * 8);
+    const imgValue = Math.floor(Math.random() * 11);
+    return `${bgDir}.${bgFrom}.${bgTo}-${imgValue}`
+}
+
 
 // -------------------------------------------------- file storage
 // this creates a firebase subcollection called "uploads" which stores
@@ -108,7 +120,8 @@ const createProtectImage = async (user, uploadedFiles, storageFilePath) => {
         const docRef = await addDoc(postRef, {
             user: user.uid,
             project: uploadedFiles,
-            secureStatus: "uploaded"
+            secureStatus: "uploaded",
+            storagePath: storageFilePath
         });
         console.log("Document written with ID: ", docRef.id);
         return docRef.id;
@@ -131,8 +144,6 @@ const updateStorageMetadata = async (filePath, docID) => {
 // get data from a single firestore document
 const getDocData = async (user, docId) => {
     const docRef = doc(db, "users", `${user.uid}`, "uploads", `${docId}`);
-
-
     const docSnap = await getDoc(docRef)
 
     if (docSnap.exists()) {
@@ -145,29 +156,25 @@ const getDocData = async (user, docId) => {
 }
 
 // get all users uploads
-const getAllUploads = async (user) => {
-    const projectBoxContents = [{ title: 'example project', content: 'your projects will appear here', justif: 'your justification', date: "my/birth/day", type: 'jpg? pdf? idk?', status: 'single' }];
+const getAllUploads = async (user, sta) => {
+    const projectBoxContents = [{ title: 'Example Project', content: 'Your projects will appear here', justif: "I literally drew it. It's literally mine, okay", date: "my/birth/day", type: 'image/png', status: 'single', storePath: "dingDangDally", firebaseDocId: "mDffkcsLP6JU94HdWCvw" }];
     const querySnapshot = await getDocs(collection(db, "users", `${user.uid}`, "uploads"));
     querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        
-        // console.log(doc.id, " => ", doc.data());
-        // console.log(JSON.stringify(doc.data()));
-
-
         const postTitle = doc.data().project.projectTitle;
         const postDesc = doc.data().project.projectDesc;
         const postJust = doc.data().project.projectJustif;
         const postType = doc.data().project.fileType;
         const postDate = doc.data().project.uploadDate;
         const postStatus = doc.data().secureStatus;
+        const filePath = doc.data().storagePath;
+        const firestoreId = doc.id;
 
-        projectBoxContents.push({title: postTitle, content: postDesc, justif: postJust, date: postDate, type: postType, status: postStatus})
-        // console.log(JSON.stringify(projectBoxContents))
-        // return projectBoxContents;
-        // return doc.data();
+        if (postStatus === sta) {
+            projectBoxContents.push({title: postTitle, content: postDesc, justif: postJust, date: postDate, type: postType, status: postStatus, storePath: filePath, firebaseDocId: firestoreId})
+        } 
+
     });
-    // return (JSON.stringify(projectBoxContents));
     return (projectBoxContents);
 }
 

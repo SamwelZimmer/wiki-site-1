@@ -607,7 +607,7 @@ li {
 
 .green-block {
   background-color: #3c4733;
-  color: #332817;
+  color: #B6B2AB;
 }
 
 .brown-block {
@@ -644,6 +644,15 @@ li {
   pointer-events: auto;
   opacity: 1;
   transform: translateY(0);
+}
+
+.my-work-underline {
+  position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.25rem;
+    background: #332817;
 }
 
 

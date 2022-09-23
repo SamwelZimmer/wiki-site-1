@@ -14,9 +14,10 @@ import ResetPassword from "./components/LoginComponents/ResetPassword";
 import Success from "./components/Success";
 import Cancel from "./components/Cancel";
 import ContactUs from "./components/ContactUsComponents/ContactUs";
-import ContactFormSuccess from "./components/ContactUsComponents/ContactFormSuccess"
+import ContactFormSuccess from "./components/ContactUsComponents/ContactFormSuccess";
 import About from "./components/AboutPageComponents/About";
-import ExamplesPage from "./components/ExamplesPageComponents/ExamplesPage"
+import ExamplesPage from "./components/ExamplesPageComponents/ExamplesPage";
+import MyUpload from "./components/ProfilePageComponents/MyUpload";
 
 fetch('http://localhost:4242/results')
   .then(response => {
@@ -31,6 +32,7 @@ function App() {
         <Route exact path='/' element={<Home2/>} />
         <Route path='/products' element={<ProductsPage />} />
         <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/my-upload' element={<MyUpload />} />
         <Route path='/protect-image' element={<ProtectImagePage />} />
         <Route path='/lovely' element={<Lovely />} />
         <Route path='/login' element={<LoginPage />} />

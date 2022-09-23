@@ -1,7 +1,12 @@
 import React from "react";
+import { useState } from "react"
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
-function CreateProjectBox({ title, content }) {
+
+function CreateProjectBox({ title, content, justif, date, type, status, storePath, firebaseDocId }) {
+
+    const navigate = useNavigate();
 
     function pseudoRandomProjectContainer() {
 
@@ -45,14 +50,40 @@ function CreateProjectBox({ title, content }) {
     
     }
 
+    const titleTrim = (str) => {
+        if (str.length > 15) {
+            return `${str.substring(0, 15)} ...`
+        } else {
+            return str
+        }
+    }
+
+    const contentTrim = (str) => {
+        if (str.length > 30) {
+            return `${str.substring(0, 30)} ...`
+        } else {
+            return str
+        }
+    }
+
+    
+
+
+    const data = {title: title, content: content, justif: justif, date: date, type: type, status: status, storePath: storePath, firebaseDocId: firebaseDocId}
+
+    const handleClick = () => {
+        navigate("/my-upload", {state: data})
+    }
+
     return (
         <motion.div 
           class={ pseudoRandomProjectContainer() }
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={handleClick}
         >
-            <div style={{ fontSize: '1rem' }} >{title}</div>
-            <div style={{ paddingTop: '1rem' }} >{content}</div>
+            <div style={{ fontSize: '1rem' }} >{titleTrim(title)}</div>
+            <div style={{ paddingTop: '1rem' }} >{contentTrim(content)}</div>
         </motion.div>
     );
 }

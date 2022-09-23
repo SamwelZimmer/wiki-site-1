@@ -4,20 +4,27 @@ import { motion, AnimatePresence } from "framer-motion";
 import { BiTimer } from "react-icons/bi";
 import { BsLock }from "react-icons/bs";
 
+
 import SecuredProjects from "./SecuredProjects";
 import UnderwayProjects from "./UnderwayProjects";
 import Footer from "../FooterComponents/Footer";
 
+
 const allIngredients = [
-    { icon: <BsLock/>, label: "Secured", content: <SecuredProjects /> },
-    { icon: <BiTimer/>, label: "Underway", content: <UnderwayProjects /> },
-];
-  
+  { icon: <BsLock/>, label: "Secured", content: <SecuredProjects /> },
+  { icon: <BiTimer/>, label: "Underway", content: <UnderwayProjects /> },
+] ;
+
 const [tomato, lettuce] = allIngredients;
 const tabs = [tomato, lettuce];
 
+
+
+
 function MyWorkWindow() {
+
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
+
 
   return (
     <div className="absolute left-0 w-full flex flex-col top-3/4 md:top-full">
@@ -28,7 +35,7 @@ function MyWorkWindow() {
               {tabs.map((i) => (
                 <li
                   key={i.label}
-                  className={i === selectedTab ? "light-backdrop-box w-1/2 rounded-t-2xl cursor-pointer flex flex-col items-center text-center justify-center gap-0 text-xl md:text-2xl" : "w-1/2 rounded-t-2xl cursor-pointer flex flex-col items-center justify-center gap-0 text-xl md:text-2xl"}
+                  className={i === selectedTab ? "relative light-backdrop-box w-1/2 rounded-t-2xl cursor-pointer flex flex-col items-center text-center justify-center gap-0 text-xl md:text-2xl" : "w-1/2 rounded-t-2xl cursor-pointer flex flex-col items-center justify-center gap-0 text-xl md:text-2xl"}
                   onClick={() => setSelectedTab(i)}
                 >
                   <div className="flex flex-row gap-3 items-center self-center">
@@ -41,7 +48,7 @@ function MyWorkWindow() {
                   </div>
                   
                   {i === selectedTab ? (
-                    <motion.div className="absolute w-3/7 h-1 brown-bg bottom-0" layoutId="underline" />
+                    <motion.div className="my-work-underline z-50" layoutId="my-work-underline" />
                   ) : null}
                 </li>
               ))}
@@ -50,7 +57,7 @@ function MyWorkWindow() {
           <main className="relative">
             <AnimatePresence exitBeforeEnter>
               <motion.div
-                  className="text-2xl md:text-5xl"
+                  className="text-2xl md:text-5xl min-h-[20rem]"
                   key={selectedTab ? selectedTab.label : "empty"}
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -65,7 +72,7 @@ function MyWorkWindow() {
         </div>
         
       </div>
-      <div className="bg-green-300 w-full mt-16">
+      <div className="w-full mt-16">
         <Footer />
       </div>
     </div>

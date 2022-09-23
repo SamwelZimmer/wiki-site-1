@@ -8,23 +8,19 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 
-import profileAvatar from "./avatar_img.png"
-import PrivateSwitch from "./PrivateSwitch";
-import LockIcon from "./LockIcon";
-import UnlockIcon from "./UnlockIcon";
+import GetProfilePicture from "./GetProfilePicture";
+// import PrivateSwitch from "./PrivateSwitch";
+// import LockIcon from "./LockIcon";
+// import UnlockIcon from "./UnlockIcon";
 import EditPlanButton from "./EditPlanButton";
 import MyWorkWindow from "./MyWorkWindow";
 import { BsInfoCircle } from "react-icons/bs";
 import { BsArrowDownShort } from "react-icons/bs";
 
 import LogoutButton from "../NavComponents/LogoutButton";
-
-import Navbar2 from "../NavComponents/Navbar2";
 import Navbar3 from "../NavComponents/Navbar3";
-import Footer from "../FooterComponents/Footer";
 
 function ProfilePage() {
-
     const [user, loading ] = useAuthState(auth);
     const [name, setName] = useState("");
     const [plan, setPlan] = useState("");
@@ -88,7 +84,9 @@ function ProfilePage() {
                 <div className="w-full z-10 px-6 pt-12 md:p-12">
                     <div className="light-backdrop-box flex flex-col px-6 py-6 md:px-12 shadow-md">
                         <div className="dark-backdrop-box items-center w-full flex flex-row p-3 h-28 md:p-6 md:h-48 md:gap-12 shadow-md">
-                            <img className="h-full aspect-square rounded-full" src={profileAvatar} alt="Avatar" />
+                            <div className="h-full aspect-square">
+                                <GetProfilePicture />
+                            </div>
                             <h1 className="brown-text text-center text-lg md:text-5xl">{name}</h1>
                         </div>
                         <div className="flex flex-row self-center justify-between items-center w-full md:px-6 md:w-1/2">

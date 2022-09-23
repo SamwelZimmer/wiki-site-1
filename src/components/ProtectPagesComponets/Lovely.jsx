@@ -19,9 +19,11 @@ export default function Lovely() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // i am getting the metadata from firestore storage because I can pass down the storage file path using react router
-    // i am getting the firestore document id from this metadata so i can get the upload info from firestore
-    // i think it is better to get it from firetore than storage as the data is easier to update using firestore
+
+    // The protection page is passing the firestore document ID and the path (through react router) to find this document in firebase storage
+    // This means i can add this firestore ID to the storage metadata for better cross-referencing.
+    // Them I am getting the metadata from firestore storage to get the firestore document ID again and then use this to get the data from firestore
+    // This is probably stupid given I could just get the data using the passed down docID.
 
     const storagePath = location.state.storagePath;
     const docId = location.state.docId;

@@ -6,6 +6,9 @@ import FounderLinks from "./FounderLinks";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
+import GregFace from "../../assets/Face12.svg";
+import SamFace from "../../assets/Face14.svg";
+
 export default function FounderSlider() {
   const [samClicked, setSamClicked] = useState(false);
   const [gregClicked, setGregClicked] = useState(false);
@@ -16,10 +19,6 @@ export default function FounderSlider() {
   if (mql.matches === false) {
     profileSize = 150;
   }
-    
-
-  console.log(mql)
-  console.log(profileSize)
 
 
   const handleSamClicked = () => {
@@ -64,8 +63,13 @@ export default function FounderSlider() {
         data-isOpen={samClicked}
         onClick={handleSamClicked}
       >
-        <motion.div whileHover={{ translateX: -5 }} whileTap={{ translateX: 30 }} className="pointer">
-          <CgProfile size={profileSize}color={"#3c4733"}/>
+        <motion.div whileHover={{ translateX: -5 }} whileTap={{ translateX: 30 }} className={`h-full pointer ${mql.matches ? "py-1 pl-2" : "py-2 pl-4"} `}>
+          <div className={`h-full bg-gradient-to-tr from-slate-700 to-gray-400 aspect-square rounded-full ${mql.matches ? "p-2" : "p-6"}`}>
+            <img className="" src={SamFace} alt="Sam's Face" />
+          </div>
+          <CgProfile className="h-full invisible" size={profileSize} color={"#3c4733"}/>
+
+          
         </motion.div>
         { samClicked && (
           <motion.div data-isOpen={samClicked}>
@@ -95,12 +99,12 @@ export default function FounderSlider() {
         <motion.div
           whileHover={{ translateX: 5 }}
           whileTap={{ translateX: -30 }}
-          className="pointer"
+          className={`h-full pointer ${mql.matches ? "py-1 pl-2" : "py-2 pl-4"} `}
         >
-          <CgProfile
-            size={profileSize}
-            color={"#332817"}
-          />
+           <div className={`h-full bg-gradient-to-b from-teal-800 to-indigo-400 aspect-square rounded-full ${mql.matches ? "p-2" : "p-6"}`}>
+            <img className="" src={GregFace} alt="Sam's Face" />
+          </div>
+          <CgProfile size={profileSize} color={"#332817"} className="invisible" />
         </motion.div>
       </motion.div>
     </div>

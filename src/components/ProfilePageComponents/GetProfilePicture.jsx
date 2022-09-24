@@ -28,7 +28,7 @@ const getPart = (i, arr) => {
     return arr[i]
 }
 
-export default function GetProfilePicture() {
+export default function GetProfilePicture(nav) {
 
     const [bgValue, setBgValue] = useState("");
     const [imgValue, setImgValue] = useState("");
@@ -52,11 +52,13 @@ export default function GetProfilePicture() {
             setBgValue(res.split("-")[0]);
             setImgValue(res.split("-")[1]);
         }
-    )
+    );
 
     return (
-        <div className={`${getPart(bgValue.split('.')[0], colorDir)} ${getPart(bgValue.split('.')[1], fromColor)} ${getPart(bgValue.split('.')[2], toColor)} w-full aspect-square rounded-full p-3 md:p-4`}>
-            <img className="w-full aspect-square" src={getPart(imgValue, graphics)} alt="Avatar" />
+        <div className={`${getPart(bgValue.split('.')[0], colorDir)} ${getPart(bgValue.split('.')[1], fromColor)} ${getPart(bgValue.split('.')[2], toColor)} w-full aspect-square rounded-full`}>
+            <div className={nav.nav ? "p-1" : "w-full rounded-full p-3 md:p-4"}>
+                <img className='aspect-square' src={getPart(imgValue, graphics)} alt="Avatar" />
+            </div>
         </div>
     );
 

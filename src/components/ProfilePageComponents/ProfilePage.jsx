@@ -85,7 +85,7 @@ function ProfilePage() {
                     <div className="light-backdrop-box flex flex-col px-6 py-6 md:px-12 shadow-md">
                         <div className="dark-backdrop-box items-center w-full flex flex-row p-3 h-28 md:p-6 md:h-48 md:gap-12 shadow-md">
                             <div className="h-full aspect-square">
-                                <GetProfilePicture />
+                                <GetProfilePicture nav={false} />
                             </div>
                             <h1 className="brown-text text-center text-lg md:text-5xl">{name}</h1>
                         </div>

@@ -30,7 +30,6 @@ function Home2() {
     // for the animated graphics
     const observerLeft = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log(entry)
             if (entry.isIntersecting) {
                 entry.target.classList.add("show-home-graphic");
             } 
@@ -46,7 +45,6 @@ function Home2() {
 
     const observerRight = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log(entry)
             if (entry.isIntersecting) {
                 entry.target.classList.add("show-home-graphic");
             } 

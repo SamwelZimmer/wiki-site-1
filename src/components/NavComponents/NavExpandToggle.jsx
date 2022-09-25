@@ -39,8 +39,8 @@ function NavExpandToggle() {
                         <motion.p style={{width: '3rem', color: '#B6B2AB'}} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>About</motion.p>
                     </Link>   
                     <BsDot size={25} />
-                    <Link className="links" to={'/contact-us'} style={{ textDecoration: 'none' }}>
-                        <motion.p style={{width: '3rem', color: '#B6B2AB'}} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>Contacts</motion.p>
+                    <Link className="links" to={'/guides'} style={{ textDecoration: 'none' }}>
+                        <motion.p style={{width: '3rem', color: '#B6B2AB'}} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>Guides</motion.p>
                     </Link>      
                    
                 </div>

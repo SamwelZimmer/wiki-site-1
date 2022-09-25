@@ -1,0 +1,15 @@
+export default function BlogExample2() {
+    return (
+        <div className="flex flex-col">
+            <h1 className="text-3xl md:text-6xl">Title of Blog 2</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non purus ut mauris ultricies cursus ut in nunc. Donec at neque nibh. Quisque elit massa, blandit quis molestie vitae, finibus sit amet sem. Quisque posuere purus sit amet tortor suscipit dapibus. Aliquam feugiat vel lacus eget finibus. Nam lacinia blandit tellus, sit amet facilisis tellus ultrices quis. Sed dictum, tortor sed viverra imperdiet, augue neque efficitur odio, ut congue dui justo at turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris pretium bibendum mollis. In vehicula porttitor ex ut consequat. Nam semper dapibus neque et laoreet. Aliquam venenatis fermentum erat. Maecenas mollis tellus eu dui iaculis suscipit. Cras bibendum nibh quis massa imperdiet, ut gravida metus finibus.
+
+                Donec tristique turpis quis mauris tincidunt, a sodales libero ullamcorper. Praesent consectetur nisi eget accumsan mollis. Phasellus ac vestibulum dolor. Proin luctus, sem in aliquam ullamcorper, mauris ex malesuada velit, vitae bibendum lorem eros ut est. Vestibulum pretium venenatis massa at porta. Nullam fermentum pretium ex, id porta enim pharetra sed. Proin egestas at sapien vitae malesuada. Ut hendrerit augue et velit suscipit euismod. Pellentesque sodales molestie magna ac porta. Suspendisse in tristique neque. Ut suscipit, nunc a interdum dapibus, magna erat faucibus massa, eget porta arcu dui ut tellus. Nulla at ex et lectus tempor pretium. Nam pellentesque, nunc feugiat condimentum tempor, odio velit semper dui, ac porttitor tellus velit eget urna. Ut nec tempor nisl.
+
+                Nunc ultricies velit at mauris dignissim, quis gravida nibh pulvinar. Suspendisse ultrices sem lacinia aliquam auctor. Donec molestie dolor at velit dapibus, non placerat mauris tristique. Donec a neque gravida, elementum odio vel, sollicitudin mauris. Vivamus feugiat massa eget eros fringilla, sit amet ultricies ex consectetur. Fusce nisl magna, tincidunt ut risus vitae, dictum maximus felis. Pellentesque convallis massa at eros sodales luctus.
+
+                Praesent ipsum velit, egestas at felis quis, consequat malesuada mi. In elementum ligula sit amet felis laoreet finibus. Praesent quis sem arcu. Ut eu tincidunt est. Sed euismod quam neque, ut sagittis diam laoreet nec. Phasellus sit amet lorem rhoncus, dignissim neque eget, lacinia metus. Cras at felis auctor, dignissim est quis, sodales diam. Nulla tincidunt nibh eu arcu auctor laoreet. Nulla nisl risus, ullamcorper et purus sed, lobortis semper orci. Proin consequat eros nec risus maximus tincidunt. Phasellus eu pretium orci, eget feugiat nunc. Curabitur aliquam massa libero, vel iaculis velit fringilla at. Phasellus ullamcorper massa at risus aliquam, vitae pretium risus vehicula. Integer vestibulum lacus quis mauris suscipit, in blandit odio posuere. Quisque convallis porttitor lacus eget porttitor.            </p>
+        </div>
+    );
+}

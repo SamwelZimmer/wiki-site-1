@@ -18,6 +18,8 @@ import ContactFormSuccess from "./components/ContactUsComponents/ContactFormSucc
 import About from "./components/AboutPageComponents/About";
 import ExamplesPage from "./components/ExamplesPageComponents/ExamplesPage";
 import MyUpload from "./components/ProfilePageComponents/MyUpload";
+import GuidesPage from "./components/GuidesComponents/GuidesPage";
+import Article from "./components/GuidesComponents/Article";
 
 fetch('http://localhost:4242/results')
   .then(response => {
@@ -47,6 +49,8 @@ function App() {
         <Route path="/contact-us-thanks" element={<ContactFormSuccess />} />
         <Route path="/about" element={<About />} />
         <Route path="/examples" element={<ExamplesPage />} />
+        <Route path="/guides" element={<GuidesPage />} />
+        <Route path="/article" element={<Article />} />
 
       </Routes>
     </Router>

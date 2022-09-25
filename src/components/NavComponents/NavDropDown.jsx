@@ -60,8 +60,8 @@ function NavDropDown() {
                     </motion.li>    
                     
                     <div className="w-full text-center items-center">
-                        <motion.li className="brown-text opacity-70 text-lg" whileTap={{ scale: 0.9 }} onClick={() => navigate("/contact-us")}>
-                            Contact
+                        <motion.li className="brown-text opacity-70 text-lg" whileTap={{ scale: 0.9 }} onClick={() => navigate("/guides")}>
+                            Guides
                         </motion.li>
                     </div>
 

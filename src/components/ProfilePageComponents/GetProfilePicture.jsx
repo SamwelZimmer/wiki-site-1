@@ -57,7 +57,7 @@ export default function GetProfilePicture(nav) {
     return (
         <div className={`${getPart(bgValue.split('.')[0], colorDir)} ${getPart(bgValue.split('.')[1], fromColor)} ${getPart(bgValue.split('.')[2], toColor)} w-full aspect-square rounded-full`}>
             <div className={nav.nav ? "p-1" : "w-full rounded-full p-3 md:p-4"}>
-                <img className='aspect-square' src={getPart(imgValue, graphics)} alt="Avatar" />
+                <img className='aspect-square' src={getPart(imgValue, graphics)}  />
             </div>
         </div>
     );

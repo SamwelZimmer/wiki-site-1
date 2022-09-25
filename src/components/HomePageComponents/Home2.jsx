@@ -70,7 +70,7 @@ function Home2() {
                     {/* from the company name at the top */}
                     <div className="w-screen flex flex-col items-center my-16 px-6 pb-6 lg:my-24 lg:px-12 lg:pb-12">
                         <h3 className="beige-text px-0 py-0 text-center md:text-2xl">Company Name</h3>
-                        <div className="light-backdrop-box z-20 shadow-xl flex flex-col w-full h-max py-12 px-6 gap-3 md:py-24 md:px-24 md:gap-12 xl:px-48">
+                        <div className="light-backdrop-box z-20 shadow-xl flex flex-col w-full h-max py-12 px-6 gap-3 md:py-24 md:px-24 md:gap-12 lg:px-48 xl:px-64">
                             <h1 className="brown-text text-left text-5xl md:text-8xl">Copyrighting, </h1>
                             <h1 className="brown-text text-right text-5xl md:text-8xl">just better</h1>
                         </div>
